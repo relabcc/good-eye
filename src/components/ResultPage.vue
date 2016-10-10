@@ -2,7 +2,9 @@
   <div v-if="result">
     <h1 :style="{ color: colors.blue }">就決定去 {{tours[result].direction}} 了</h1>
     <h2 :style="{ color: colors.blue }">{{tours[result].location}}</h2>
-    <p :style="{ color: colors.grey }">{{tours[result].description}}</p>
+    <div class="description">
+      <p :style="{ color: colors.grey }">{{tours[result].description}}</p>
+    </div>
     <div class="result-img">
       <img :src="resultPic" />
     </div>
@@ -61,16 +63,24 @@ export default {
       return `static/${this.result}/1.png`;
     },
     tourRoute() {
-      return `/tour/${this.result}/1`;
+      const { isMobile } = this.$store.state;
+      return `/tour/${this.result}${isMobile.any ? '/1' : ''}`;
     },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.description p {
+  margin-bottom: -20px;
+}
+
 .result-img {
   width: 75%;
   margin: 0 auto;
+}
+
+.result-img img {
+  width: 100%;
 }
 </style>

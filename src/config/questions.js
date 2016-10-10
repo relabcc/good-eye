@@ -12,14 +12,16 @@ const titles = [
   '晚上去哪裡續攤？',
 ];
 
-const mapChoices = (title, index) => ({
-  title,
-  choices: shuffle([
-    { tour: 'west', item: tours.west.questions[index] },
-    { tour: 'east', item: tours.east.questions[index] },
-    { tour: 'north', item: tours.north.questions[index] },
-    { tour: 'south', item: tours.south.questions[index] },
-  ]),
+const mapChoices = (tour, index) => ({
+  tour,
+  item: tours[tour].questions[index].item,
+  text: tours[tour].questions[index].text,
 });
 
-export default titles.map(mapChoices);
+const mapQuestions = (title, index) => ({
+  title,
+  choices: shuffle(Object.keys(tours))
+    .map(tour => mapChoices(tour, index)),
+});
+
+export default titles.map(mapQuestions);

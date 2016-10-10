@@ -20,15 +20,29 @@
     <div class="description">
       <p :style="{ color: colors.blue }">{{spot.description}}</p>
     </div>
-    <img :src="spot.img">
+    <div class="img">
+      <img :src="spot.img">
+    </div>
+    <div class="status">
+      <status-bar
+        :total="spotLength"
+        :current="parseInt($route.params.id, 10)"
+        :goTo="goTo"
+      ></status-bar>
+    </div>
   </div>
 </template>
 
 <script>
+import StatusBar from './StatusBar';
+
 import colors from '../config/colors';
 import tours from '../config/tours';
 
 export default {
+  components: {
+    StatusBar,
+  },
   data() {
     return {
       colors,
@@ -68,6 +82,10 @@ export default {
         $router.push('/about');
       }
     },
+    goTo(index) {
+      const { direction } = this.$route.params;
+      this.$router.push(`/tour/${direction}/${index}`);
+    },
   },
 };
 </script>
@@ -84,12 +102,16 @@ export default {
 }
 
 .description {
-  text-align: left;
+  text-align: justify;
   padding: 8px 36px;
 }
 
 .action {
   cursor: pointer;
   margin: 0 8px;
+}
+
+.img img {
+  width: 100%;
 }
 </style>

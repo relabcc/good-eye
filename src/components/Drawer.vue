@@ -1,6 +1,6 @@
 <template>
   <div class="drawer">
-    <div :style="{ color: colors.blue }" class="menu-title sub-header">Menu</div>
+    <div :style="{ color: colors.grey }" class="menu-title sub-header">菜單</div>
     <nav>
       <dl>
         <menu-list-item
@@ -16,6 +16,8 @@
 
 <script>
 import colors from '../config/colors';
+import share from '../utils/share';
+
 import MenuListItem from './MenuListItem';
 export default {
   components: {
@@ -37,6 +39,10 @@ export default {
             this.$router.push('/about');
           },
         },
+        {
+          title: '分享出去',
+          onClick: share,
+        },
       ],
     };
   },
@@ -55,10 +61,9 @@ export default {
   width: 200px;
   left: 0;
   position: fixed;
-  z-index: 100;
+  z-index: 200;
   background: white;
-  /*border-right-width: 10px;*/
-  /*border-right-style: solid;*/
+  box-shadow: 0 0 3px rgba(0,0,0,.35),0 2px 2px rgba(0,0,0,.2);
 }
 
 .drawer-enter-active, .drawer-leave-active {
@@ -70,6 +75,7 @@ export default {
 }
 
 .menu-title {
+  font-size: 20px;
   height: 48px;
   border-bottom: 1px solid #e0e0e0;
   padding-left: 12px;
@@ -79,6 +85,5 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  /*color: white;*/
 }
 </style>

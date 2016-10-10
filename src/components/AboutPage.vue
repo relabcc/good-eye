@@ -19,6 +19,7 @@
 <script>
 import Btn from './Btn';
 import colors from '../config/colors';
+import share from '../utils/share';
 export default {
   components: {
     Btn,
@@ -33,12 +34,7 @@ export default {
     };
   },
   methods: {
-    share() {
-      window.FB.ui({
-        method: 'share',
-        href: window.location.origin,
-      });
-    },
+    share,
   },
 };
 </script>
@@ -56,6 +52,7 @@ export default {
 
 .description {
   text-align: justify;
+  margin: 0 8px;
 }
 
 @media screen and (min-width: 640px) {

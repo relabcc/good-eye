@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="title" :style="{ color: colors.blue }">{{question.title}}</h2>
+    <h2 :style="{ color: colors.blue }">{{question.title}}</h2>
     <div class="choices">
       <div
         class="choice"
@@ -8,20 +8,32 @@
         @click="choice.onClick"
       >
         <img :src="choice.img" />
+        <div class="choice-text">
+          <p :style="{ color: colors.grey }">{{choice.text}}</p>
+        </div>
       </div>
+    </div>
+    <div class="status">
+      <status-bar
+        :total="questionLength"
+        :current="parseInt($route.params.id, 10)"
+        :goTo="goTo"
+      ></status-bar>
     </div>
   </div>
 </template>
 
 <script>
+import StatusBar from './StatusBar';
 import colors from '../config/colors';
 import questions from '../config/questions';
-const questionLength = questions.length;
 
 export default {
+  components: { StatusBar },
   data() {
     return {
       colors,
+      questionLength: questions.length,
     };
   },
   computed: {
@@ -30,6 +42,7 @@ export default {
         $route,
         $router,
         $store,
+        questionLength,
       } = this;
       const index = parseInt($route.params.id, 10);
       const question = questions[index - 1];
@@ -50,32 +63,32 @@ export default {
       };
     },
   },
+  methods: {
+    goTo(target) {
+      const index = parseInt(this.$route.params.id, 10);
+      if (target < index) this.$router.push(`/question/${target}`);
+    },
+  },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .title {
-    font-weight: bold;
-    margin-top: 24px;
-  }
+.choice {
+  width: 50%;
+  padding: 14px;
+  display: inline-block;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 100ms ease-in-out;
+  box-sizing: border-box;
+}
 
-  .choice {
-    width: 50%;
-    padding: 14px;
-    display: inline-block;
-    cursor: pointer;
-    transform: scale(1);
-    transition: transform 100ms ease-in-out;
-    box-sizing: border-box;
-  }
+.choice:hover {
+  transform: scale(1.1);
+  transition: transform 100ms ease-in-out;
+}
 
-  .choice:hover {
-    transform: scale(1.1);
-    transition: transform 100ms ease-in-out;
-  }
-
-  .choice img {
-    width: 100%;
-  }
+.choice-text {
+  margin-top: -32px;
+}
 </style>

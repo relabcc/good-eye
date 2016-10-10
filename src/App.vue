@@ -99,6 +99,10 @@ p {
   font-size: 16px;
 }
 
+img {
+  width: 100%;
+}
+
 .action {
   margin: 36px auto;
 }
@@ -109,7 +113,7 @@ p {
 }
 
 .container {
-  max-width: 768px;
+  max-width: 640px;
   margin: 0 auto;
   z-index: 1;
   padding: 0 14px;

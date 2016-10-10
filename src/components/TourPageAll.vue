@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2 :style="{ color: colors.blue }">{{location}}</h2>
     <div v-for="(spot, index) in spots">
       <h2 :style="{ color: colors.grey }">{{spot.time}}</h2>
       <div class="description">
@@ -32,6 +33,9 @@ export default {
       const { direction } = this.$route.params;
       return direction;
     },
+    location() {
+      return tours[this.direction].location;
+    },
     spots() {
       return tours[this.direction].spots;
     },
@@ -45,6 +49,7 @@ export default {
   text-align: left;
   padding: 8px 36px;
 }
+
 .action {
   margin-bottom: 60px;
 }
