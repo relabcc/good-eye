@@ -6,7 +6,6 @@ import 'sanitize.css/sanitize.css';
 import 'animate.css';
 
 import pace from './vendor/pace';
-import './assets/preload.css';
 import './assets/pace.css';
 
 import App from './App';
