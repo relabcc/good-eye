@@ -1,9 +1,11 @@
 <template>
   <div class="status-wrapper">
     <div class="status-item" v-for="n in total">
-      <div v-show="n === current" class="status-man">
-        <img src="static/man.png">
-      </div>
+      <transition name="man-move">
+        <div v-show="n === current" class="status-man">
+          <img src="static/man.png">
+        </div>
+      </transition><transition name="man-move">
       <div
         class="circle"
         :style="circleStyle(n)"
@@ -68,7 +70,7 @@ export default {
 }
 
 .status-man {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .circle {
@@ -78,12 +80,22 @@ export default {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  transition: transform 100ms ease-in-out;
+  transition: transform 200ms ease-in-out,
+    border-color 200ms ease-in-out,
+    background 200ms ease-in-out;
   box-sizing: border-box;
 }
 
 .circle:hover {
   transform: scale(1.2);
-  transition: transform 100ms ease-in-out;
+  transition: transform 200ms ease-in-out;
+}
+
+.man-move-enter-active, .man-move-leave-active {
+  transition: opacity 200ms ease;
+}
+
+.man-move-enter, .man-move-leave-active {
+  opacity: 0;
 }
 </style>

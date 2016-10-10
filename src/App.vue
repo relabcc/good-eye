@@ -5,7 +5,7 @@
     </transition>
     <app-bar v-on:openMenu="openMenu"></app-bar>
     <div class="container">
-      <transition-manager :transitionName="transitionName">
+      <transition-manager :transitionDirection="transitionDirection">
         <router-view></router-view>
       </transition-manager>
     </div>
@@ -19,7 +19,7 @@ import TransitionManager from './components/TransitionManager';
 
 const data = {
   drawerOpen: false,
-  transitionName: 'slide-left',
+  transitionDirection: 'left',
 };
 
 let overlayDiv;
@@ -58,14 +58,6 @@ export default {
     closeMenu() {
       this.drawerOpen = false;
       hideOverlay();
-    },
-  },
-  watch: {
-    $route(to, from) {
-      const toDepth = to.path.split('/').length;
-      const fromDepth = from.path.split('/').length;
-      this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left';
-      console.log(this.transitionName);
     },
   },
 };
@@ -110,15 +102,24 @@ img {
 #app {
   font-family: sans-serif;
   text-align: center;
+  height: 100%;
 }
 
 .container {
   max-width: 640px;
+  height: 100%;
   margin: 0 auto;
   z-index: 1;
   padding: 0 14px;
   background: white;
   position: relative;
+}
+
+.container > div {
+  width: 100%;
+  position: absolute;
+  top: 48px;
+  left: 0;
 }
 
 .black-overlay {

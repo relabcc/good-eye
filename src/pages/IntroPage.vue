@@ -15,7 +15,7 @@
 
 <script>
 import colors from '../config/colors';
-import Btn from './Btn';
+import Btn from '../components/Btn';
 export default {
   components: {
     Btn,
@@ -40,7 +40,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .intro-msg {
-  padding: 0 8px;
+  padding: 0 16px;
   text-align: justify;
 }
 

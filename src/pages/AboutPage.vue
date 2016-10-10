@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Btn from './Btn';
+import Btn from '../components/Btn';
 import colors from '../config/colors';
 import share from '../utils/share';
 export default {
@@ -52,12 +52,6 @@ export default {
 
 .description {
   text-align: justify;
-  margin: 0 8px;
-}
-
-@media screen and (min-width: 640px) {
-  .description {
-    margin: 0 16px;
-  }
+  margin: 0 16px;
 }
 </style>

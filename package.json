@@ -13,9 +13,11 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
+    "hammerjs": "^2.0.8",
     "ismobilejs": "^0.4.0",
     "sanitize.css": "^4.1.0",
-    "velocity-animate": "^1.2.3",
+    "tween.js": "^16.3.5",
     "vue": "^2.0.1",
     "vue-router": "^2.0.0",
     "vuex": "^2.0.0"

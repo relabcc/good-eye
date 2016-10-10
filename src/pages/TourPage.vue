@@ -34,12 +34,21 @@
 </template>
 
 <script>
-import StatusBar from './StatusBar';
+import Hammer from 'hammerjs';
+import StatusBar from '../components/StatusBar';
 
 import colors from '../config/colors';
 import tours from '../config/tours';
 
 export default {
+  mounted() {
+    this.hammertime = new Hammer(this.$el);
+    this.hammertime.on('swipeleft', this.goNext);
+    this.hammertime.on('swiperight', this.goBack);
+  },
+  beforeDestroy() {
+    this.hammertime.off('swipeleft, swiperight');
+  },
   components: {
     StatusBar,
   },
@@ -111,7 +120,7 @@ export default {
   margin: 0 8px;
 }
 
-.img img {
-  width: 100%;
+.img {
+  margin: -48px 0 -32px;
 }
 </style>

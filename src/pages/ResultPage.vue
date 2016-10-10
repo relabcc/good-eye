@@ -18,10 +18,9 @@
 <script>
 import { forEach, reduce } from 'lodash';
 
+import Btn from '../components/Btn';
 import colors from '../config/colors';
 import tours from '../config/tours';
-
-import Btn from './Btn';
 
 export default {
   beforeMount() {

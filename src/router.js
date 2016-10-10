@@ -1,26 +1,72 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import IntroPage from './components/IntroPage';
-import QuestionPage from './components/QuestionPage';
-import ResultPage from './components/ResultPage';
-import TourPage from './components/TourPage';
-import TourPageAll from './components/TourPageAll';
-import AboutPage from './components/AboutPage';
+import IntroPage from './pages/IntroPage';
+import QuestionPage from './pages/QuestionPage';
+import ResultPage from './pages/ResultPage';
+import TourPage from './pages/TourPage';
+import TourPageAll from './pages/TourPageAll';
+import AboutPage from './pages/AboutPage';
 
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/', component: IntroPage },
-  { path: '/question/:id', component: QuestionPage },
-  { path: '/result', component: ResultPage },
-  { path: '/about', component: AboutPage },
-  { path: '/tour/:direction/', component: TourPageAll },
-  { path: '/tour/:direction/:id', component: TourPage },
+  {
+    name: 'intro',
+    path: '/',
+    component: IntroPage,
+  },
+  {
+    name: 'question',
+    path: '/question/:id',
+    component: QuestionPage,
+  },
+  {
+    name: 'result',
+    path: '/result',
+    component: ResultPage,
+  },
+  {
+    name: 'tourAll',
+    path: '/tour/:direction/',
+    component: TourPageAll,
+  },
+  {
+    name: 'tour',
+    path: '/tour/:direction/:id',
+    component: TourPage,
+  },
+  {
+    name: 'about',
+    path: '/about',
+    component: AboutPage,
+  },
 ];
 
 const router = new VueRouter({
   routes,
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
+});
+
+export const routeSequence = {
+  intro: 1,
+  question: 2,
+  result: 3,
+  tour: 4,
+  tourAll: 5,
+  about: 6,
+};
+
+router.direction = 'next';
+
+router.beforeEach((to, from, next) => {
+  const toName = to.name;
+  const fromName = from.name;
+  if (!fromName) next();
+  router.direction = routeSequence[toName] > routeSequence[fromName] ? 'next' : 'prev';
+  next();
 });
 
 export default router;

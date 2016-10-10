@@ -7,7 +7,9 @@
         v-for="choice in question.choices"
         @click="choice.onClick"
       >
-        <img :src="choice.img" />
+        <div class="choice-image">
+          <img :src="choice.img" />
+        </div>
         <div class="choice-text">
           <p :style="{ color: colors.grey }">{{choice.text}}</p>
         </div>
@@ -24,7 +26,7 @@
 </template>
 
 <script>
-import StatusBar from './StatusBar';
+import StatusBar from '../components/StatusBar';
 import colors from '../config/colors';
 import questions from '../config/questions';
 
@@ -88,7 +90,7 @@ export default {
   transition: transform 100ms ease-in-out;
 }
 
-.choice-text {
-  margin-top: -32px;
+.choice-image {
+  margin: -32px 0;
 }
 </style>

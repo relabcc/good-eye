@@ -6,7 +6,9 @@
       <div class="description">
         <p :style="{ color: colors.blue }">{{spot.description}}</p>
       </div>
-      <img :src="'static/' + direction + '/' + index + '.png'">
+      <div class="img">
+        <img :src="'static/' + direction + '/' + index + '.png'">
+      </div>
     </div>
     <div class="action">
       <btn label="關於這個計畫" route="/about"></btn>
@@ -15,9 +17,9 @@
 </template>
 
 <script>
+import Btn from '../components/Btn';
 import colors from '../config/colors';
 import tours from '../config/tours';
-import Btn from './Btn';
 
 export default {
   components: {
@@ -52,5 +54,9 @@ export default {
 
 .action {
   margin-bottom: 60px;
+}
+
+.img {
+  margin: -48px 0;
 }
 </style>
