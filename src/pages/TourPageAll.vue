@@ -7,7 +7,7 @@
         <p :style="{ color: colors.blue }">{{spot.description}}</p>
       </div>
       <div class="img">
-        <img :src="'static/' + isMobile + direction + '/' + index + '.png'">
+        <img :src="'static/' + direction + '/' + index + '.png'">
       </div>
     </div>
     <div class="action">
@@ -31,7 +31,7 @@ export default {
     };
   },
   computed: {
-    isMobile() {
+    isMobilePath() {
       const { isMobile } = this.$store.state;
       return isMobile.any ? 'mobile/' : '';
     },

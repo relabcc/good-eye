@@ -48,7 +48,7 @@ export default {
       } = this;
       const index = parseInt($route.params.id, 10);
       const question = questions[index - 1];
-      const isMobile = $store.state.isMobile.any ? '/mobile' : '';
+      // const isMobilePath = $store.state.isMobile.any ? '/mobile' : '';
       return {
         title: question.title,
         choices: question.choices.map(choice => ({
@@ -61,7 +61,7 @@ export default {
             $router.push(index === questionLength ?
               '/result' : `/question/${index + 1}`);
           },
-          img: `static${isMobile}/${choice.tour}/${choice.item}.png`,
+          img: `static/${choice.tour}/${choice.item}.png`,
         })),
       };
     },

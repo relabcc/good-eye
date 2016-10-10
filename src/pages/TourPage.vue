@@ -72,10 +72,10 @@ export default {
     },
     spot() {
       const { direction, id } = this.$route.params;
-      const isMobilePath = this.$store.state.isMobile.any ? '/mobile' : '';
+      // const isMobilePath = this.$store.state.isMobile.any ? '/mobile' : '';
       return {
         ...tours[direction].spots[id],
-        img: `static${isMobilePath}/${direction}/${id}.png`,
+        img: `static/${direction}/${id}.png`,
       };
     },
   },
