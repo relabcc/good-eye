@@ -146,7 +146,7 @@ img {
 }
 
 .black-overlay.active {
-  opacity: 0.7;
+  opacity: 0.5;
   z-index: 50;
   visibility: visible;
   transition: opacity 250ms ease-in-out;

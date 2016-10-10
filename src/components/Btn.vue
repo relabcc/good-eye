@@ -1,6 +1,6 @@
 <template>
   <div class="btn-wrapper">
-    <button class="btn" @click="onClick" :style="btnStyle">{{label}}</button>
+    <button class="btn" @click="onClick" :style="btnStyle">{{label}}<slot></slot></button>
   </div>
 </template>
 

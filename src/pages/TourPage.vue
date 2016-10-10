@@ -30,12 +30,18 @@
         :goTo="goTo"
       ></status-bar>
     </div>
+    <modal v-if="!$store.state.tourHinted && !$store.state.inTransition">
+      <h3 slot="body" :style="{ color: colors.blue }">向右滑動，開始探索</h3>
+      <btn slot="footer" :action="hintRead">OK!</btn>
+    </modal>
   </div>
 </template>
 
 <script>
 import Hammer from 'hammerjs';
 import StatusBar from '../components/StatusBar';
+import Modal from '../components/Modal';
+import Btn from '../components/Btn';
 
 import colors from '../config/colors';
 import tours from '../config/tours';
@@ -50,6 +56,8 @@ export default {
     this.hammertime.off('swipeleft, swiperight');
   },
   components: {
+    Btn,
+    Modal,
     StatusBar,
   },
   data() {
@@ -95,6 +103,9 @@ export default {
     goTo(index) {
       const { direction } = this.$route.params;
       this.$router.push(`/tour/${direction}/${index}`);
+    },
+    hintRead() {
+      this.$store.commit('tourHint');
     },
   },
 };

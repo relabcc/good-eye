@@ -8,11 +8,22 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     answers: {},
+    inTransition: false,
     isMobile,
+    tourHinted: false,
   },
   mutations: {
     answer(state, payload) {
       state.answers[payload.index] = payload.answer;
+    },
+    transitionStart(state) {
+      state.inTransition = true;
+    },
+    transitionEnd(state) {
+      state.inTransition = false;
+    },
+    tourHint(state) {
+      state.tourHinted = true;
     },
   },
 });
