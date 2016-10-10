@@ -59,7 +59,8 @@ export default {
       return max.key;
     },
     resultPic() {
-      return `static/${this.result}/1.png`;
+      const isMobilePath = this.$store.state.isMobile.any ? '/mobile' : '';
+      return `static${isMobilePath}/${this.result}/1.png`;
     },
     tourRoute() {
       const { isMobile } = this.$store.state;
