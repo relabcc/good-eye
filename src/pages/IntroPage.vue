@@ -2,7 +2,7 @@
   <div>
     <h2 :style="{ color: colors.blue }">今天去哪裡好呢？</h2>
     <div class="intro-msg">
-      <h3 :style="{ color: colors.grey }">動動手指選出喜歡的圖片，就能得到最適合你今日的推薦行程，準備好了嗎？</h3>
+      <p :style="{ color: colors.grey }">動動手指選出喜歡的圖片，就能得到最適合你今日的推薦行程，準備好了嗎？</p>
     </div>
     <div class="intro-img">
       <img src="static/man.png" />

@@ -42,6 +42,11 @@ const showOverlay = () => {
 };
 
 export default {
+  mounted() {
+    window.setTimeout(() => {
+      this.$el.className = 'show';
+    }, 100, this);
+  },
   components: {
     AppBar,
     Drawer,
@@ -72,17 +77,17 @@ body {
   height: 100%;
 }
 
-h1, .heading {
+h1 {
   font-size: 36px;
   font-weight: bold;
 }
 
-h2, .header {
+h2 {
   font-size: 28px;
   font-weight: bold;
 }
 
-h3, .sub-header {
+h3 {
   font-size: 20px;
   font-weight: normal;
 }
@@ -95,14 +100,16 @@ img {
   width: 100%;
 }
 
-.action {
-  margin: 36px auto;
-}
-
 #app {
+  opacity: 0;
   font-family: sans-serif;
   text-align: center;
   height: 100%;
+  transition: opacity 0.5s ease;
+}
+
+#app.show {
+  opacity: 1;
 }
 
 .container {
@@ -120,6 +127,10 @@ img {
   position: absolute;
   top: 48px;
   left: 0;
+}
+
+.action {
+  margin: 36px auto;
 }
 
 .black-overlay {
