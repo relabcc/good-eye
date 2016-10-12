@@ -1,20 +1,29 @@
 <template>
   <div>
-    <h2 :style="{ color: colors.blue }">{{question.title}}</h2>
-    <div class="choices">
+    <transition-manager>
       <div
-        class="choice"
-        v-for="choice in question.choices"
-        @click="choice.onClick"
+        v-for="(question, id) in questions"
+        v-if="$route.params.id - 1 === id"
       >
-        <div class="choice-image">
-          <img :src="choice.img" />
+        <div class="question">
+          <h2 :style="{ color: colors.blue }">{{question.title}}</h2>
+          <div class="choices">
+            <div
+              class="choice"
+              v-for="choice in question.choices"
+              @click="choice.onClick"
+            >
+              <div class="choice-image">
+                <img :src="choice.img" />
+              </div>
+              <div class="choice-text">
+                <p :style="{ color: colors.grey }">{{choice.text}}</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="choice-text">
-          <p :style="{ color: colors.grey }">{{choice.text}}</p>
-        </div>
-      </div>
-    </div>
+      </div >
+    </transition-manager>
     <div class="status">
       <status-bar
         :total="questionLength"
@@ -27,11 +36,15 @@
 
 <script>
 import StatusBar from '../components/StatusBar';
+import TransitionManager from '../components/TransitionManager';
 import colors from '../config/colors';
 import questions from '../config/questions';
 
 export default {
-  components: { StatusBar },
+  components: {
+    StatusBar,
+    TransitionManager,
+  },
   data() {
     return {
       colors,
@@ -39,31 +52,28 @@ export default {
     };
   },
   computed: {
-    question() {
+    questions() {
       const {
-        $route,
         $router,
         $store,
         questionLength,
       } = this;
-      const index = parseInt($route.params.id, 10);
-      const question = questions[index - 1];
-      // const isMobilePath = $store.state.isMobile.any ? '/mobile' : '';
-      return {
+      return questions.map((question, index) => ({
         title: question.title,
         choices: question.choices.map(choice => ({
           ...choice,
           onClick: () => {
+            const qIndex = index + 1;
             $store.commit('answer', {
-              index,
+              index: qIndex,
               answer: choice.tour,
             });
-            $router.push(index === questionLength ?
-              '/result' : `/question/${index + 1}`);
+            $router.push(qIndex === questionLength ?
+              '/result' : `/question/${qIndex + 1}`);
           },
           img: `static/${choice.tour}/${choice.item}.png`,
         })),
-      };
+      }));
     },
   },
   methods: {
@@ -76,6 +86,12 @@ export default {
 </script>
 
 <style scoped>
+.question {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .choice {
   width: 50%;
   padding: 14px;
@@ -93,5 +109,10 @@ export default {
 
 .choice-image {
   margin: -32px 0;
+}
+
+.status {
+  margin-top: 90px;
+  padding-top: 100%;
 }
 </style>

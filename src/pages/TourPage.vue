@@ -8,7 +8,12 @@
         </svg>
       </div>
       <div class="time">
-        <h2 :style="{ color: colors.grey }">{{spot.time}}</h2>
+        <div
+          v-for="(spot, index) in spots"
+          v-if="$route.params.id === index"
+        >
+          <h2 :style="{ color: colors.grey }">{{spot.time}}</h2>
+        </div>
       </div>
       <div class="action" @click="goNext">
         <svg :style="{ fill: colors.blue }" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -17,11 +22,22 @@
         </svg>
       </div>
     </div>
-    <div class="description">
-      <p :style="{ color: colors.blue }">{{spot.description}}</p>
-    </div>
-    <div class="img">
-      <img :src="spot.img">
+    <div class="tour-wrapper">
+      <transition-manager>
+        <div
+          v-for="(spot, index) in spots"
+          v-if="$route.params.id === index"
+        >
+          <div class="tour">
+            <div class="description">
+              <p :style="{ color: colors.blue }">{{spot.description}}</p>
+            </div>
+            <div class="img">
+              <img :src="'static/' + $route.params.direction + '/' + index + '.png'">
+            </div>
+          </div>
+        </div>
+      </transition-manager>
     </div>
     <div class="status">
       <status-bar
@@ -42,6 +58,7 @@ import Hammer from 'hammerjs';
 import StatusBar from '../components/StatusBar';
 import Modal from '../components/Modal';
 import Btn from '../components/Btn';
+import TransitionManager from '../components/TransitionManager';
 
 import colors from '../config/colors';
 import tours from '../config/tours';
@@ -59,6 +76,7 @@ export default {
     Btn,
     Modal,
     StatusBar,
+    TransitionManager,
   },
   data() {
     return {
@@ -70,13 +88,10 @@ export default {
       const { direction } = this.$route.params;
       return Object.keys(tours[direction].spots).length;
     },
-    spot() {
-      const { direction, id } = this.$route.params;
+    spots() {
+      const { direction } = this.$route.params;
       // const isMobilePath = this.$store.state.isMobile.any ? '/mobile' : '';
-      return {
-        ...tours[direction].spots[id],
-        img: `static/${direction}/${id}.png`,
-      };
+      return tours[direction].spots;
     },
   },
   methods: {
@@ -113,6 +128,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.tour-wrapper {
+  position: relative;
+}
+
 .tour-nav {
   margin-top: 14px;
   height: 32px;
@@ -120,6 +139,12 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.tour {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .description {
@@ -134,5 +159,10 @@ export default {
 
 .img {
   margin: -48px 0 -32px;
+}
+
+.status {
+  margin-top: 60px;
+  padding-top: 100%;
 }
 </style>

@@ -50,7 +50,7 @@ const router = new VueRouter({
   },
 });
 
-export const routeSequence = {
+const routeSequence = {
   intro: 1,
   question: 2,
   result: 3,
@@ -65,7 +65,13 @@ router.beforeEach((to, from, next) => {
   const toName = to.name;
   const fromName = from.name;
   if (!fromName) next();
-  router.direction = routeSequence[toName] > routeSequence[fromName] ? 'next' : 'prev';
+  if (toName === fromName) {
+    const toIndex = to.path.split('/').pop();
+    const fromIndex = from.path.split('/').pop();
+    router.direction = toIndex > fromIndex ? 'next' : 'prev';
+  } else {
+    router.direction = routeSequence[toName] > routeSequence[fromName] ? 'next' : 'prev';
+  }
   next();
 });
 

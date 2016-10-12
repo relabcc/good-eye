@@ -106,6 +106,7 @@ img {
   text-align: center;
   height: 100%;
   transition: opacity 0.5s ease;
+  overflow-x: hidden;
 }
 
 #app.show {
