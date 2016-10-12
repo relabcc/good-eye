@@ -16,47 +16,49 @@
 </template>
 
 <script>
-import { forEach, reduce } from 'lodash';
-
 import Btn from '../components/Btn';
 import colors from '../config/colors';
 import tours from '../config/tours';
+import { forEach, reduce } from 'lodash';
 
 export default {
   beforeMount() {
     if (!Object.keys(this.$store.state.answers).length) {
       this.$router.push('/');
     }
+    const { $store } = this;
+    /* eslint-disable no-param-reassign */
+    const sum = reduce($store.state.answers, (result, value) => {
+      result[value] = (result[value] + 1) || 1;
+      return result;
+    }, {});
+    /* eslint-enable no-param-reassign */
+
+    const max = {
+      value: 0,
+      key: null,
+    };
+
+    forEach(sum, (value, key) => {
+      if (value > max.value) {
+        max.value = value;
+        max.key = key;
+      }
+    });
+
+    $store.commit('setResult', { result: max.key });
   },
   components: { Btn },
   data() {
     return {
       colors,
       tours,
+      result: false,
     };
   },
   computed: {
     result() {
-      /* eslint-disable no-param-reassign */
-      const sum = reduce(this.$store.state.answers, (result, value) => {
-        result[value] = (result[value] + 1) || 1;
-        return result;
-      }, {});
-      /* eslint-enable no-param-reassign */
-
-      const max = {
-        value: 0,
-        key: null,
-      };
-
-      forEach(sum, (value, key) => {
-        if (value > max.value) {
-          max.value = value;
-          max.key = key;
-        }
-      });
-
-      return max.key;
+      return this.$store.state.result;
     },
     resultPic() {
       // const isMobilePath = this.$store.state.isMobile.any ? '/mobile' : '';

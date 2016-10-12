@@ -70,6 +70,7 @@ export default {
             });
             $router.push(qIndex === questionLength ?
               '/result' : `/question/${qIndex + 1}`);
+            if (qIndex === questionLength) $store.commit('doneQuiz');
           },
           img: `static/${choice.tour}/${choice.item}.png`,
         })),
@@ -112,7 +113,7 @@ export default {
 }
 
 .status {
-  margin-top: 90px;
+  margin-top: 60px;
   padding-top: 100%;
 }
 </style>

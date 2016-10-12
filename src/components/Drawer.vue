@@ -26,7 +26,11 @@ export default {
   data() {
     return {
       colors,
-      menuItems: [
+    };
+  },
+  computed: {
+    menuItems() {
+      const m1 = [
         {
           title: '回到首頁',
           onClick: () => {
@@ -39,12 +43,21 @@ export default {
             this.$router.push('/about');
           },
         },
-        {
-          title: '分享出去',
-          onClick: share,
+      ];
+      return m1.concat(this.$store.state.done && {
+        title: '我的行程',
+        onClick: () => {
+          const {
+            $store,
+            $router,
+          } = this;
+          $router.push(`/tour/${$store.state.result}${$store.state.isMobile.any ? '/1' : ''}`);
         },
-      ],
-    };
+      }, {
+        title: '分享出去',
+        onClick: share,
+      });
+    },
   },
   methods: {
     closeMenu() {

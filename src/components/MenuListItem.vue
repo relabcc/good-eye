@@ -1,5 +1,5 @@
 <template>
-  <dt :style="{ color: colors.blue }" class="menu-item" @click="click">{{title}}</dt>
+  <dt v-if='title' :style="{ color: colors.blue }" class="menu-item" @click="click">{{title}}</dt>
 </template>
 
 <script>

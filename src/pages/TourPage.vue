@@ -145,6 +145,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 10;
 }
 
 .description {
@@ -162,7 +163,8 @@ export default {
 }
 
 .status {
-  margin-top: 60px;
+  position: relative;
+  z-index: 20;
   padding-top: 100%;
 }
 </style>
