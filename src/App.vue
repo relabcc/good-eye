@@ -75,21 +75,25 @@ html {
 
 body {
   height: 100%;
+  font-family: "Noto Sans CJK TC", "source-han-sans-traditional", sans-serif;
 }
 
 h1 {
   font-size: 36px;
   font-weight: bold;
+  font-family: "Noto Sans CJK TC", "source-han-sans-traditional", sans-serif;
 }
 
 h2 {
   font-size: 28px;
   font-weight: bold;
+  font-family: "Noto Sans CJK TC", "source-han-sans-traditional", sans-serif;
 }
 
 h3 {
   font-size: 20px;
   font-weight: normal;
+  font-family: "Noto Sans CJK TC", "source-han-sans-traditional", sans-serif;
 }
 
 p {
@@ -102,7 +106,6 @@ img {
 
 #app {
   opacity: 0;
-  font-family: sans-serif;
   text-align: center;
   height: 100%;
   transition: opacity 0.5s ease;

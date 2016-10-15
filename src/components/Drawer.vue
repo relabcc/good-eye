@@ -88,7 +88,7 @@ export default {
 }
 
 .menu-title {
-  font-size: 20px;
+  font-size: 16px;
   height: 48px;
   border-bottom: 1px solid #e0e0e0;
   padding-left: 12px;

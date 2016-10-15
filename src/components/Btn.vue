@@ -56,6 +56,7 @@ export default {
   font-weight: bold;
   transition: transform 100ms ease-in-out;
   box-sizing: border-box;
+  font-family: "Noto Sans CJK TC", "source-han-sans-traditional", sans-serif;
 }
 
 .btn:hover {
