@@ -12,9 +12,11 @@ import App from './App';
 import router from './router';
 import store from './store';
 
-pace.start();
+pace.start({
+  ajax: false,
+});
 pace.on('done', () => {
-  // document.getElementById('preloader').remove();
+  document.getElementById('preloader').remove();
   /* eslint-disable no-new */
   new Vue({
     el: '#app',
