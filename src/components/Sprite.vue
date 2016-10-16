@@ -5,6 +5,7 @@
 
 <script>
 import sprites from '../spritesmith-generated/sprites.json';
+import spritesImg from '../spritesmith-generated/sprites.png';
 
 export default {
   props: {
@@ -27,6 +28,7 @@ export default {
       return {
         backgroundPosition: `${offset.x}% ${offset.y}%`,
         backgroundSize: `${splice.x * 100}% ${splice.y * 100}%`,
+        backgroundImage: `url('${spritesImg}')`,
       };
     },
   },
@@ -38,7 +40,6 @@ export default {
 .sprite {
   width: 100%;
   padding-top: 100%;
-  background-image: url('../spritesmith-generated/sprites.png')
 }
 
 </style>

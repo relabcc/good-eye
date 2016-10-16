@@ -1,12 +1,23 @@
 <template>
-  <div class="walker"></div>
+  <div class="walker" :style="{ backgroundImage: `url(${walker})` }"></div>
 </template>
+
+<script>
+import walker from '../assets/walker.png';
+
+export default {
+  data() {
+    return {
+      walker,
+    };
+  },
+};
+</script>
 
 <style scoped>
 .walker {
   width: 100%;
   padding-top: 112.847222%;
-  background-image: url('../assets/walker.png');
   background-size: cover;
   animation: play 1.2s steps(8) infinite;
 }

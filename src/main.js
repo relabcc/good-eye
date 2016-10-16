@@ -6,9 +6,7 @@ import 'sanitize.css/sanitize.css';
 import 'animate.css';
 
 import Pace from 'pace-progress';
-
-import './assets/preloader.css';
-
+import './utils/preloader';
 import './assets/pace.css';
 import App from './App';
 import router from './router';
@@ -19,7 +17,7 @@ Pace.start({
 });
 
 Pace.on('done', () => {
-  // document.getElementById('preloader').remove();
+  document.getElementById('preloader').remove();
   /* eslint-disable no-new */
   new Vue({
     el: '#app',
