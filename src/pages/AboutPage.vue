@@ -7,7 +7,7 @@
         第一本由台灣團隊製作的中英文設計旅遊書，為了讓這本書能順利在國內外上市，我們還需要同樣喜愛旅遊、認真生活，想讓世界認識真實台北的你，贊助此次計畫。請上嘖嘖網站理解更多細節！</p>
     </div>
     <div class="intro-img">
-      <img src="static/man.png" />
+      <img :src="man" />
     </div>
     <div class="action">
       <btn label="分享出去" :action="share"></btn>
@@ -20,6 +20,8 @@
 import Btn from '../components/Btn';
 import colors from '../config/colors';
 import share from '../utils/share';
+import man from '../assets/man.png';
+
 export default {
   components: {
     Btn,
@@ -31,6 +33,7 @@ export default {
         color: colors.blue,
         borderColor: colors.blue,
       },
+      man,
     };
   },
   methods: {

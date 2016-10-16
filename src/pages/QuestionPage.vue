@@ -72,7 +72,6 @@ export default {
               '/result' : `/question/${qIndex + 1}`);
             if (qIndex === questionLength) $store.commit('doneQuiz');
           },
-          img: `static/${choice.tour}/${choice.item}.png`,
         })),
       }));
     },

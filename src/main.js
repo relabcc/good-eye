@@ -5,17 +5,18 @@ import Vue from 'vue';
 import 'sanitize.css/sanitize.css';
 import 'animate.css';
 
-import pace from './vendor/pace';
-import './assets/pace.css';
+import Pace from 'pace-progress';
 
+import './assets/pace.css';
 import App from './App';
 import router from './router';
 import store from './store';
 
-pace.start({
+Pace.start({
   ajax: false,
 });
-pace.on('done', () => {
+
+Pace.on('done', () => {
   // document.getElementById('preloader').remove();
   /* eslint-disable no-new */
   new Vue({

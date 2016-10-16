@@ -46,6 +46,10 @@ module.exports = {
         loader: 'vue'
       },
       {
+        test: require.resolve('pace-progress'),
+        loader: 'imports?define=>false'
+      },
+      {
         test: /\.js$/,
         loader: 'babel',
         include: projectRoot,

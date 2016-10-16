@@ -1,5 +1,6 @@
-import tours from './tours';
 import { shuffle } from 'lodash';
+import spots from '../assets/spots';
+import tours from './tours';
 
 const titles = [
   '今天早餐想吃什麼？',
@@ -12,11 +13,14 @@ const titles = [
   '晚上去哪裡續攤？',
 ];
 
-const mapChoices = (tour, index) => ({
-  tour,
-  item: tours[tour].questions[index].item,
-  text: tours[tour].questions[index].text,
-});
+const mapChoices = (tour, index) => {
+  const choice = tours[tour].questions[index];
+  return {
+    ...choice,
+    tour,
+    img: spots[tour][choice.item - 1],
+  };
+};
 
 const mapQuestions = (title, index) => ({
   title,

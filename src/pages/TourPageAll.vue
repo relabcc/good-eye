@@ -7,7 +7,7 @@
         <p :style="{ color: colors.blue }">{{spot.description}}</p>
       </div>
       <div class="img">
-        <img :src="'static/' + direction + '/' + index + '.png'">
+        <img :src="spot.img">
       </div>
     </div>
     <div class="action">
