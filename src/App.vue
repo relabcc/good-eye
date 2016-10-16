@@ -68,32 +68,33 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+$font-family: "Noto Sans CJK TC", "source-han-sans-traditional", sans-serif;
 html {
   height: 100%;
 }
 
 body {
   height: 100%;
-  font-family: "Noto Sans CJK TC", "source-han-sans-traditional", sans-serif;
+  font-family: $font-family;
 }
 
 h1 {
   font-size: 36px;
   font-weight: bold;
-  font-family: "Noto Sans CJK TC", "source-han-sans-traditional", sans-serif;
+  font-family: $font-family;
 }
 
 h2 {
   font-size: 28px;
   font-weight: bold;
-  font-family: "Noto Sans CJK TC", "source-han-sans-traditional", sans-serif;
+  font-family: $font-family;
 }
 
 h3 {
   font-size: 20px;
   font-weight: normal;
-  font-family: "Noto Sans CJK TC", "source-han-sans-traditional", sans-serif;
+  font-family: $font-family;
 }
 
 p {
