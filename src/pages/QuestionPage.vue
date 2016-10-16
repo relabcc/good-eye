@@ -14,7 +14,7 @@
               @click="choice.onClick"
             >
               <div class="choice-image">
-                <img :src="choice.img" />
+                <sprite :tour="choice.tour" :index="id + 1"></sprite>
               </div>
               <div class="choice-text">
                 <p :style="{ color: colors.grey }">{{choice.text}}</p>
@@ -27,7 +27,7 @@
     <div class="status">
       <status-bar
         :total="questionLength"
-        :current="parseInt($route.params.id, 10)"
+        :current="~~$route.params.id"
         :goTo="goTo"
       ></status-bar>
     </div>
@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import ReFooter from '../components/ReFooter';
+import Sprite from '../components/Sprite';
 import StatusBar from '../components/StatusBar';
 import TransitionManager from '../components/TransitionManager';
 import colors from '../config/colors';
@@ -44,6 +46,8 @@ export default {
   components: {
     StatusBar,
     TransitionManager,
+    ReFooter,
+    Sprite,
   },
   data() {
     return {
@@ -87,6 +91,7 @@ export default {
 
 <style scoped>
 .question {
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;

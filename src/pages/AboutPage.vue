@@ -13,10 +13,13 @@
       <btn label="分享出去" :action="share"></btn>
       <btn label="重新開始" route="/"></btn>
     </div>
+    <re-footer></re-footer>
   </div>
 </template>
 
 <script>
+import ReFooter from '../components/ReFooter';
+
 import Btn from '../components/Btn';
 import colors from '../config/colors';
 import share from '../utils/share';
@@ -25,6 +28,7 @@ import man from '../assets/man.png';
 export default {
   components: {
     Btn,
+    ReFooter,
   },
   data() {
     return {

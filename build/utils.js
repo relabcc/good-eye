@@ -1,6 +1,7 @@
 var path = require('path')
 var config = require('../config')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var SpritesmithPlugin = require('webpack-spritesmith')
 
 exports.assetsPath = function (_path) {
   var assetsSubDirectory = process.env.NODE_ENV === 'production'
@@ -56,4 +57,27 @@ exports.styleLoaders = function (options) {
     })
   }
   return output
+}
+
+exports.spritesmithPlugin = function(spots) {
+  return spots.map(function(spot) {
+    return new SpritesmithPlugin({
+      src: {
+        cwd: path.resolve(__dirname, '../src/assets/' + spot),
+        glob: '*.png'
+      },
+      target: {
+        image: path.resolve(__dirname, '../src/spritesmith-generated/' + spot + '.png'),
+        css: [
+          path.resolve(__dirname, '../src/spritesmith-generated/' + spot + '.scss'),
+          [path.resolve(__dirname, '../src/spritesmith-generated/' + spot + '.json'), {
+            format: 'json_texture'
+          }]
+        ]
+      },
+      apiOptions: {
+        cssImageRef: spot + '.png'
+      }
+    });
+  });
 }

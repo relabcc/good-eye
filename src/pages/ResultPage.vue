@@ -6,20 +6,24 @@
       <p :style="{ color: colors.grey }">{{tours[result].description}}</p>
     </div>
     <div class="result-img">
-      <img :src="resultPic" />
+      <sprite :tour="result" index="1"></sprite>
     </div>
     <div class="actions">
       <btn label="立即探索" :route="tourRoute"></btn>
       <btn label="關於這個計畫" route="/about"></btn>
     </div>
+    <re-footer></re-footer>
   </div>
 </template>
 
 <script>
+import { reduce } from 'lodash';
+
+import ReFooter from '../components/ReFooter';
+import Sprite from '../components/Sprite';
 import Btn from '../components/Btn';
 import colors from '../config/colors';
 import tours from '../config/tours';
-import { forEach, reduce } from 'lodash';
 
 export default {
   beforeMount() {
@@ -27,28 +31,28 @@ export default {
       this.$router.push('/');
     }
     const { $store } = this;
-    /* eslint-disable no-param-reassign */
-    const sum = reduce($store.state.answers, (result, value) => {
-      result[value] = (result[value] + 1) || 1;
-      return result;
-    }, {});
-    /* eslint-enable no-param-reassign */
-
     const max = {
       value: 0,
       key: null,
     };
-
-    forEach(sum, (value, key) => {
-      if (value > max.value) {
-        max.value = value;
+    /* eslint-disable no-param-reassign */
+    reduce($store.state.answers, (result, key) => {
+      result[key] = (result[key] + 1) || 1;
+      if (result[key] > max.value) {
+        max.value = result[key];
         max.key = key;
       }
-    });
+      return result;
+    }, {});
+    /* eslint-enable no-param-reassign */
 
     $store.commit('setResult', { result: max.key });
   },
-  components: { Btn },
+  components: {
+    Btn,
+    ReFooter,
+    Sprite,
+  },
   data() {
     return {
       colors,
@@ -59,10 +63,6 @@ export default {
   computed: {
     result() {
       return this.$store.state.result;
-    },
-    resultPic() {
-      // const isMobilePath = this.$store.state.isMobile.any ? '/mobile' : '';
-      return `static/${this.result}/1.png`;
     },
     tourRoute() {
       const { isMobile } = this.$store.state;

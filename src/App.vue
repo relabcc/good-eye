@@ -5,9 +5,11 @@
     </transition>
     <app-bar v-on:openMenu="openMenu"></app-bar>
     <div class="container">
-      <transition-manager :transitionDirection="transitionDirection">
-        <router-view></router-view>
-      </transition-manager>
+      <div class="transition-wrapper">
+        <transition-manager :transitionDirection="transitionDirection">
+          <router-view></router-view>
+        </transition-manager>
+      </div>
     </div>
   </div>
 </template>
@@ -119,15 +121,16 @@ img {
 
 .container {
   max-width: 640px;
-  height: 100%;
   margin: 0 auto;
-  z-index: 1;
   padding: 0 14px;
   background: white;
+}
+
+.transition-wrapper {
   position: relative;
 }
 
-.container > div {
+.transition-wrapper > div {
   width: 100%;
   position: absolute;
   top: 48px;

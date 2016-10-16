@@ -33,7 +33,7 @@
               <p :style="{ color: colors.blue }">{{spot.description}}</p>
             </div>
             <div class="img">
-              <img :src="spot.img">
+              <sprite :tour="direction" :index="~~index + 1"></sprite>
             </div>
           </div>
         </div>
@@ -55,6 +55,9 @@
 
 <script>
 import Hammer from 'hammerjs';
+
+import ReFooter from '../components/ReFooter';
+import Sprite from '../components/Sprite';
 import StatusBar from '../components/StatusBar';
 import Modal from '../components/Modal';
 import Btn from '../components/Btn';
@@ -77,6 +80,8 @@ export default {
     Modal,
     StatusBar,
     TransitionManager,
+    ReFooter,
+    Sprite,
   },
   data() {
     return {
@@ -84,40 +89,39 @@ export default {
     };
   },
   computed: {
+    direction() {
+      return this.$route.params.direction;
+    },
     spotLength() {
-      const { direction } = this.$route.params;
-      return Object.keys(tours[direction].spots).length;
+      return Object.keys(tours[this.direction].spots).length;
     },
     spots() {
-      const { direction } = this.$route.params;
-      // const isMobilePath = this.$store.state.isMobile.any ? '/mobile' : '';
-      return tours[direction].spots;
+      return tours[this.direction].spots;
     },
   },
   methods: {
     goBack() {
       const { $route, $router } = this;
-      const { direction, id } = $route.params;
+      const { id } = $route.params;
       let index = parseInt(id, 10);
       if (--index > 0) {
-        $router.push(`/tour/${direction}/${index}`);
+        $router.push(`/tour/${this.direction}/${index}`);
       } else {
         $router.push('/result');
       }
     },
     goNext() {
       const { $route, $router } = this;
-      const { direction, id } = $route.params;
+      const { id } = $route.params;
       let index = parseInt(id, 10);
       if (++index < this.spotLength) {
-        $router.push(`/tour/${direction}/${index}`);
+        $router.push(`/tour/${this.direction}/${index}`);
       } else {
         $router.push('/about');
       }
     },
     goTo(index) {
-      const { direction } = this.$route.params;
-      this.$router.push(`/tour/${direction}/${index}`);
+      this.$router.push(`/tour/${this.direction}/${index}`);
     },
     hintRead() {
       this.$store.commit('tourHint');

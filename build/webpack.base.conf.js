@@ -2,6 +2,7 @@ var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
+var SpritesmithPlugin = require('webpack-spritesmith')
 
 module.exports = {
   entry: {
@@ -13,6 +14,7 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
+    modulesDirectories: ['web_modules', 'node_modules', 'spritesmith-generated'],
     extensions: ['', '.js', '.vue'],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
@@ -77,6 +79,26 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new SpritesmithPlugin({
+      src: {
+        cwd: path.resolve(__dirname, '../src/assets/sprites'),
+        glob: '*.png'
+      },
+      target: {
+        image: path.resolve(__dirname, '../src/spritesmith-generated/sprites.png'),
+        css: [
+          path.resolve(__dirname, '../src/spritesmith-generated/sprites.scss'),
+          [path.resolve(__dirname, '../src/spritesmith-generated/sprites.json'), {
+            format: 'json_texture'
+          }]
+        ]
+      },
+      apiOptions: {
+        cssImageRef: '../spritesmith-generated/sprites.png'
+      }
+    })
+  ],
   eslint: {
     formatter: require('eslint-friendly-formatter')
   },

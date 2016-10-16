@@ -1,5 +1,5 @@
 import { shuffle } from 'lodash';
-import spots from '../assets/spots';
+// import spots from '../assets/spots';
 import tours from './tours';
 
 const titles = [
@@ -18,7 +18,7 @@ const mapChoices = (tour, index) => {
   return {
     ...choice,
     tour,
-    img: spots[tour][choice.item - 1],
+    // img: spots[tour][choice.item - 1],
   };
 };
 

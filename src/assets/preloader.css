@@ -1,0 +1,6 @@
+#preloader {
+  background: url(./man.png) no-repeat -9999px -9999px,
+    url(./logo.png) no-repeat -9999px -9999px,
+    url(./walker.png) no-repeat -9999px -9999px,
+    url(../spritesmith-generated/sprites.png) no-repeat -9999px -9999px;
+}

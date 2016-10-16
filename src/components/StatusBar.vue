@@ -3,9 +3,10 @@
     <div class="status-item" v-for="n in total">
       <transition name="man-move">
         <div v-show="n === current" class="status-man">
-          <img src="static/man.png">
+          <!-- <img :src="man"> -->
+          <walker></walker>
         </div>
-      </transition><transition name="man-move">
+      </transition>
       <div
         class="circle"
         :style="circleStyle(n)"
@@ -18,6 +19,9 @@
 
 <script>
 import colors from '../config/colors';
+import man from '../assets/man.png';
+import Walker from './Walker';
+
 export default {
   props: {
     total: Number,
@@ -27,9 +31,13 @@ export default {
       default: false,
     },
   },
+  components: {
+    Walker,
+  },
   data() {
     return {
       colors,
+      man,
     };
   },
   methods: {

@@ -1,20 +1,17 @@
-import { mapValues } from 'lodash';
+// import { mapValues } from 'lodash';
 
 import east from './east.json';
 import west from './west.json';
 import south from './south.json';
 import north from './north.json';
-import spots from '../../assets/spots';
+// import spots from '../../assets/spots';
 
 const tours = {
   east: {
     direction: '城東',
     location: '象山與六張犁周邊',
     description: '從舊時的兵工廠到品味生活的聚落',
-    spots: mapValues(east, (spot, index) => ({
-      ...spot,
-      img: spots.east[index - 1],
-    })),
+    spots: east,
     questions: [
       { item: 1, text: '西式早午餐配咖啡' },
       { item: 2, text: '登高俯瞰台北' },
@@ -30,10 +27,7 @@ const tours = {
     direction: '城西',
     location: '大稻埕、西門町與艋舺周邊',
     description: '流轉城西百年風華',
-    spots: mapValues(west, (spot, index) => ({
-      ...spot,
-      img: spots.west[index - 1],
-    })),
+    spots: west,
     questions: [
       { item: 1, text: '廟口小吃' },
       { item: 2, text: '逛老茶行' },
@@ -49,10 +43,7 @@ const tours = {
     direction: '城南',
     location: '公館、台電大樓周邊',
     description: '跟著公館文青的腳步走一天',
-    spots: mapValues(south, (spot, index) => ({
-      ...spot,
-      img: spots.south[index - 1],
-    })),
+    spots: south,
     questions: [
       { item: 1, text: '健康水果沙拉' },
       { item: 3, text: '欣賞建築大師作品' },
@@ -68,10 +59,7 @@ const tours = {
     direction: '城北',
     location: '中山、雙連周邊',
     description: '異國文化與在地創意交融的迷人街區',
-    spots: mapValues(north, (spot, index) => ({
-      ...spot,
-      img: spots.north[index - 1],
-    })),
+    spots: north,
     questions: [
       { item: 1, text: '市場美食' },
       { item: 2, text: '逛設計書店' },

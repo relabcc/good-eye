@@ -7,6 +7,8 @@ import 'animate.css';
 
 import Pace from 'pace-progress';
 
+import './assets/preloader.css';
+
 import './assets/pace.css';
 import App from './App';
 import router from './router';

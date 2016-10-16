@@ -1,0 +1,547 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$east-1-name: 'east-1';
+$east-1-x: 600px;
+$east-1-y: 0px;
+$east-1-offset-x: -600px;
+$east-1-offset-y: 0px;
+$east-1-width: 600px;
+$east-1-height: 600px;
+$east-1-total-width: 4200px;
+$east-1-total-height: 3600px;
+$east-1-image: '../spritesmith-generated/sprites.png';
+$east-1: (600px, 0px, -600px, 0px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'east-1', );
+$east-10-name: 'east-10';
+$east-10-x: 600px;
+$east-10-y: 2400px;
+$east-10-offset-x: -600px;
+$east-10-offset-y: -2400px;
+$east-10-width: 600px;
+$east-10-height: 600px;
+$east-10-total-width: 4200px;
+$east-10-total-height: 3600px;
+$east-10-image: '../spritesmith-generated/sprites.png';
+$east-10: (600px, 2400px, -600px, -2400px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'east-10', );
+$east-2-name: 'east-2';
+$east-2-x: 0px;
+$east-2-y: 600px;
+$east-2-offset-x: 0px;
+$east-2-offset-y: -600px;
+$east-2-width: 600px;
+$east-2-height: 600px;
+$east-2-total-width: 4200px;
+$east-2-total-height: 3600px;
+$east-2-image: '../spritesmith-generated/sprites.png';
+$east-2: (0px, 600px, 0px, -600px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'east-2', );
+$east-3-name: 'east-3';
+$east-3-x: 600px;
+$east-3-y: 600px;
+$east-3-offset-x: -600px;
+$east-3-offset-y: -600px;
+$east-3-width: 600px;
+$east-3-height: 600px;
+$east-3-total-width: 4200px;
+$east-3-total-height: 3600px;
+$east-3-image: '../spritesmith-generated/sprites.png';
+$east-3: (600px, 600px, -600px, -600px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'east-3', );
+$east-4-name: 'east-4';
+$east-4-x: 1200px;
+$east-4-y: 0px;
+$east-4-offset-x: -1200px;
+$east-4-offset-y: 0px;
+$east-4-width: 600px;
+$east-4-height: 600px;
+$east-4-total-width: 4200px;
+$east-4-total-height: 3600px;
+$east-4-image: '../spritesmith-generated/sprites.png';
+$east-4: (1200px, 0px, -1200px, 0px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'east-4', );
+$east-5-name: 'east-5';
+$east-5-x: 1200px;
+$east-5-y: 600px;
+$east-5-offset-x: -1200px;
+$east-5-offset-y: -600px;
+$east-5-width: 600px;
+$east-5-height: 600px;
+$east-5-total-width: 4200px;
+$east-5-total-height: 3600px;
+$east-5-image: '../spritesmith-generated/sprites.png';
+$east-5: (1200px, 600px, -1200px, -600px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'east-5', );
+$east-6-name: 'east-6';
+$east-6-x: 0px;
+$east-6-y: 1200px;
+$east-6-offset-x: 0px;
+$east-6-offset-y: -1200px;
+$east-6-width: 600px;
+$east-6-height: 600px;
+$east-6-total-width: 4200px;
+$east-6-total-height: 3600px;
+$east-6-image: '../spritesmith-generated/sprites.png';
+$east-6: (0px, 1200px, 0px, -1200px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'east-6', );
+$east-7-name: 'east-7';
+$east-7-x: 600px;
+$east-7-y: 1200px;
+$east-7-offset-x: -600px;
+$east-7-offset-y: -1200px;
+$east-7-width: 600px;
+$east-7-height: 600px;
+$east-7-total-width: 4200px;
+$east-7-total-height: 3600px;
+$east-7-image: '../spritesmith-generated/sprites.png';
+$east-7: (600px, 1200px, -600px, -1200px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'east-7', );
+$east-8-name: 'east-8';
+$east-8-x: 1200px;
+$east-8-y: 1200px;
+$east-8-offset-x: -1200px;
+$east-8-offset-y: -1200px;
+$east-8-width: 600px;
+$east-8-height: 600px;
+$east-8-total-width: 4200px;
+$east-8-total-height: 3600px;
+$east-8-image: '../spritesmith-generated/sprites.png';
+$east-8: (1200px, 1200px, -1200px, -1200px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'east-8', );
+$east-9-name: 'east-9';
+$east-9-x: 1800px;
+$east-9-y: 0px;
+$east-9-offset-x: -1800px;
+$east-9-offset-y: 0px;
+$east-9-width: 600px;
+$east-9-height: 600px;
+$east-9-total-width: 4200px;
+$east-9-total-height: 3600px;
+$east-9-image: '../spritesmith-generated/sprites.png';
+$east-9: (1800px, 0px, -1800px, 0px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'east-9', );
+$north-1-name: 'north-1';
+$north-1-x: 1800px;
+$north-1-y: 600px;
+$north-1-offset-x: -1800px;
+$north-1-offset-y: -600px;
+$north-1-width: 600px;
+$north-1-height: 600px;
+$north-1-total-width: 4200px;
+$north-1-total-height: 3600px;
+$north-1-image: '../spritesmith-generated/sprites.png';
+$north-1: (1800px, 600px, -1800px, -600px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'north-1', );
+$north-2-name: 'north-2';
+$north-2-x: 1800px;
+$north-2-y: 1200px;
+$north-2-offset-x: -1800px;
+$north-2-offset-y: -1200px;
+$north-2-width: 600px;
+$north-2-height: 600px;
+$north-2-total-width: 4200px;
+$north-2-total-height: 3600px;
+$north-2-image: '../spritesmith-generated/sprites.png';
+$north-2: (1800px, 1200px, -1800px, -1200px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'north-2', );
+$north-3-name: 'north-3';
+$north-3-x: 0px;
+$north-3-y: 1800px;
+$north-3-offset-x: 0px;
+$north-3-offset-y: -1800px;
+$north-3-width: 600px;
+$north-3-height: 600px;
+$north-3-total-width: 4200px;
+$north-3-total-height: 3600px;
+$north-3-image: '../spritesmith-generated/sprites.png';
+$north-3: (0px, 1800px, 0px, -1800px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'north-3', );
+$north-4-name: 'north-4';
+$north-4-x: 600px;
+$north-4-y: 1800px;
+$north-4-offset-x: -600px;
+$north-4-offset-y: -1800px;
+$north-4-width: 600px;
+$north-4-height: 600px;
+$north-4-total-width: 4200px;
+$north-4-total-height: 3600px;
+$north-4-image: '../spritesmith-generated/sprites.png';
+$north-4: (600px, 1800px, -600px, -1800px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'north-4', );
+$north-5-name: 'north-5';
+$north-5-x: 1200px;
+$north-5-y: 1800px;
+$north-5-offset-x: -1200px;
+$north-5-offset-y: -1800px;
+$north-5-width: 600px;
+$north-5-height: 600px;
+$north-5-total-width: 4200px;
+$north-5-total-height: 3600px;
+$north-5-image: '../spritesmith-generated/sprites.png';
+$north-5: (1200px, 1800px, -1200px, -1800px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'north-5', );
+$north-6-name: 'north-6';
+$north-6-x: 1800px;
+$north-6-y: 1800px;
+$north-6-offset-x: -1800px;
+$north-6-offset-y: -1800px;
+$north-6-width: 600px;
+$north-6-height: 600px;
+$north-6-total-width: 4200px;
+$north-6-total-height: 3600px;
+$north-6-image: '../spritesmith-generated/sprites.png';
+$north-6: (1800px, 1800px, -1800px, -1800px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'north-6', );
+$north-7-name: 'north-7';
+$north-7-x: 2400px;
+$north-7-y: 0px;
+$north-7-offset-x: -2400px;
+$north-7-offset-y: 0px;
+$north-7-width: 600px;
+$north-7-height: 600px;
+$north-7-total-width: 4200px;
+$north-7-total-height: 3600px;
+$north-7-image: '../spritesmith-generated/sprites.png';
+$north-7: (2400px, 0px, -2400px, 0px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'north-7', );
+$north-8-name: 'north-8';
+$north-8-x: 2400px;
+$north-8-y: 600px;
+$north-8-offset-x: -2400px;
+$north-8-offset-y: -600px;
+$north-8-width: 600px;
+$north-8-height: 600px;
+$north-8-total-width: 4200px;
+$north-8-total-height: 3600px;
+$north-8-image: '../spritesmith-generated/sprites.png';
+$north-8: (2400px, 600px, -2400px, -600px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'north-8', );
+$south-1-name: 'south-1';
+$south-1-x: 2400px;
+$south-1-y: 1200px;
+$south-1-offset-x: -2400px;
+$south-1-offset-y: -1200px;
+$south-1-width: 600px;
+$south-1-height: 600px;
+$south-1-total-width: 4200px;
+$south-1-total-height: 3600px;
+$south-1-image: '../spritesmith-generated/sprites.png';
+$south-1: (2400px, 1200px, -2400px, -1200px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'south-1', );
+$south-10-name: 'south-10';
+$south-10-x: 2400px;
+$south-10-y: 1800px;
+$south-10-offset-x: -2400px;
+$south-10-offset-y: -1800px;
+$south-10-width: 600px;
+$south-10-height: 600px;
+$south-10-total-width: 4200px;
+$south-10-total-height: 3600px;
+$south-10-image: '../spritesmith-generated/sprites.png';
+$south-10: (2400px, 1800px, -2400px, -1800px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'south-10', );
+$south-11-name: 'south-11';
+$south-11-x: 0px;
+$south-11-y: 2400px;
+$south-11-offset-x: 0px;
+$south-11-offset-y: -2400px;
+$south-11-width: 600px;
+$south-11-height: 600px;
+$south-11-total-width: 4200px;
+$south-11-total-height: 3600px;
+$south-11-image: '../spritesmith-generated/sprites.png';
+$south-11: (0px, 2400px, 0px, -2400px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'south-11', );
+$south-2-name: 'south-2';
+$south-2-x: 0px;
+$south-2-y: 0px;
+$south-2-offset-x: 0px;
+$south-2-offset-y: 0px;
+$south-2-width: 600px;
+$south-2-height: 600px;
+$south-2-total-width: 4200px;
+$south-2-total-height: 3600px;
+$south-2-image: '../spritesmith-generated/sprites.png';
+$south-2: (0px, 0px, 0px, 0px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'south-2', );
+$south-3-name: 'south-3';
+$south-3-x: 1200px;
+$south-3-y: 2400px;
+$south-3-offset-x: -1200px;
+$south-3-offset-y: -2400px;
+$south-3-width: 600px;
+$south-3-height: 600px;
+$south-3-total-width: 4200px;
+$south-3-total-height: 3600px;
+$south-3-image: '../spritesmith-generated/sprites.png';
+$south-3: (1200px, 2400px, -1200px, -2400px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'south-3', );
+$south-4-name: 'south-4';
+$south-4-x: 1800px;
+$south-4-y: 2400px;
+$south-4-offset-x: -1800px;
+$south-4-offset-y: -2400px;
+$south-4-width: 600px;
+$south-4-height: 600px;
+$south-4-total-width: 4200px;
+$south-4-total-height: 3600px;
+$south-4-image: '../spritesmith-generated/sprites.png';
+$south-4: (1800px, 2400px, -1800px, -2400px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'south-4', );
+$south-5-name: 'south-5';
+$south-5-x: 2400px;
+$south-5-y: 2400px;
+$south-5-offset-x: -2400px;
+$south-5-offset-y: -2400px;
+$south-5-width: 600px;
+$south-5-height: 600px;
+$south-5-total-width: 4200px;
+$south-5-total-height: 3600px;
+$south-5-image: '../spritesmith-generated/sprites.png';
+$south-5: (2400px, 2400px, -2400px, -2400px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'south-5', );
+$south-6-name: 'south-6';
+$south-6-x: 3000px;
+$south-6-y: 0px;
+$south-6-offset-x: -3000px;
+$south-6-offset-y: 0px;
+$south-6-width: 600px;
+$south-6-height: 600px;
+$south-6-total-width: 4200px;
+$south-6-total-height: 3600px;
+$south-6-image: '../spritesmith-generated/sprites.png';
+$south-6: (3000px, 0px, -3000px, 0px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'south-6', );
+$south-7-name: 'south-7';
+$south-7-x: 3000px;
+$south-7-y: 600px;
+$south-7-offset-x: -3000px;
+$south-7-offset-y: -600px;
+$south-7-width: 600px;
+$south-7-height: 600px;
+$south-7-total-width: 4200px;
+$south-7-total-height: 3600px;
+$south-7-image: '../spritesmith-generated/sprites.png';
+$south-7: (3000px, 600px, -3000px, -600px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'south-7', );
+$south-8-name: 'south-8';
+$south-8-x: 3000px;
+$south-8-y: 1200px;
+$south-8-offset-x: -3000px;
+$south-8-offset-y: -1200px;
+$south-8-width: 600px;
+$south-8-height: 600px;
+$south-8-total-width: 4200px;
+$south-8-total-height: 3600px;
+$south-8-image: '../spritesmith-generated/sprites.png';
+$south-8: (3000px, 1200px, -3000px, -1200px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'south-8', );
+$south-9-name: 'south-9';
+$south-9-x: 3000px;
+$south-9-y: 1800px;
+$south-9-offset-x: -3000px;
+$south-9-offset-y: -1800px;
+$south-9-width: 600px;
+$south-9-height: 600px;
+$south-9-total-width: 4200px;
+$south-9-total-height: 3600px;
+$south-9-image: '../spritesmith-generated/sprites.png';
+$south-9: (3000px, 1800px, -3000px, -1800px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'south-9', );
+$west-1-name: 'west-1';
+$west-1-x: 3000px;
+$west-1-y: 2400px;
+$west-1-offset-x: -3000px;
+$west-1-offset-y: -2400px;
+$west-1-width: 600px;
+$west-1-height: 600px;
+$west-1-total-width: 4200px;
+$west-1-total-height: 3600px;
+$west-1-image: '../spritesmith-generated/sprites.png';
+$west-1: (3000px, 2400px, -3000px, -2400px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'west-1', );
+$west-10-name: 'west-10';
+$west-10-x: 0px;
+$west-10-y: 3000px;
+$west-10-offset-x: 0px;
+$west-10-offset-y: -3000px;
+$west-10-width: 600px;
+$west-10-height: 600px;
+$west-10-total-width: 4200px;
+$west-10-total-height: 3600px;
+$west-10-image: '../spritesmith-generated/sprites.png';
+$west-10: (0px, 3000px, 0px, -3000px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'west-10', );
+$west-11-name: 'west-11';
+$west-11-x: 600px;
+$west-11-y: 3000px;
+$west-11-offset-x: -600px;
+$west-11-offset-y: -3000px;
+$west-11-width: 600px;
+$west-11-height: 600px;
+$west-11-total-width: 4200px;
+$west-11-total-height: 3600px;
+$west-11-image: '../spritesmith-generated/sprites.png';
+$west-11: (600px, 3000px, -600px, -3000px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'west-11', );
+$west-12-name: 'west-12';
+$west-12-x: 1200px;
+$west-12-y: 3000px;
+$west-12-offset-x: -1200px;
+$west-12-offset-y: -3000px;
+$west-12-width: 600px;
+$west-12-height: 600px;
+$west-12-total-width: 4200px;
+$west-12-total-height: 3600px;
+$west-12-image: '../spritesmith-generated/sprites.png';
+$west-12: (1200px, 3000px, -1200px, -3000px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'west-12', );
+$west-13-name: 'west-13';
+$west-13-x: 1800px;
+$west-13-y: 3000px;
+$west-13-offset-x: -1800px;
+$west-13-offset-y: -3000px;
+$west-13-width: 600px;
+$west-13-height: 600px;
+$west-13-total-width: 4200px;
+$west-13-total-height: 3600px;
+$west-13-image: '../spritesmith-generated/sprites.png';
+$west-13: (1800px, 3000px, -1800px, -3000px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'west-13', );
+$west-2-name: 'west-2';
+$west-2-x: 2400px;
+$west-2-y: 3000px;
+$west-2-offset-x: -2400px;
+$west-2-offset-y: -3000px;
+$west-2-width: 600px;
+$west-2-height: 600px;
+$west-2-total-width: 4200px;
+$west-2-total-height: 3600px;
+$west-2-image: '../spritesmith-generated/sprites.png';
+$west-2: (2400px, 3000px, -2400px, -3000px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'west-2', );
+$west-3-name: 'west-3';
+$west-3-x: 3000px;
+$west-3-y: 3000px;
+$west-3-offset-x: -3000px;
+$west-3-offset-y: -3000px;
+$west-3-width: 600px;
+$west-3-height: 600px;
+$west-3-total-width: 4200px;
+$west-3-total-height: 3600px;
+$west-3-image: '../spritesmith-generated/sprites.png';
+$west-3: (3000px, 3000px, -3000px, -3000px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'west-3', );
+$west-4-name: 'west-4';
+$west-4-x: 3600px;
+$west-4-y: 0px;
+$west-4-offset-x: -3600px;
+$west-4-offset-y: 0px;
+$west-4-width: 600px;
+$west-4-height: 600px;
+$west-4-total-width: 4200px;
+$west-4-total-height: 3600px;
+$west-4-image: '../spritesmith-generated/sprites.png';
+$west-4: (3600px, 0px, -3600px, 0px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'west-4', );
+$west-5-name: 'west-5';
+$west-5-x: 3600px;
+$west-5-y: 600px;
+$west-5-offset-x: -3600px;
+$west-5-offset-y: -600px;
+$west-5-width: 600px;
+$west-5-height: 600px;
+$west-5-total-width: 4200px;
+$west-5-total-height: 3600px;
+$west-5-image: '../spritesmith-generated/sprites.png';
+$west-5: (3600px, 600px, -3600px, -600px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'west-5', );
+$west-6-name: 'west-6';
+$west-6-x: 3600px;
+$west-6-y: 1200px;
+$west-6-offset-x: -3600px;
+$west-6-offset-y: -1200px;
+$west-6-width: 600px;
+$west-6-height: 600px;
+$west-6-total-width: 4200px;
+$west-6-total-height: 3600px;
+$west-6-image: '../spritesmith-generated/sprites.png';
+$west-6: (3600px, 1200px, -3600px, -1200px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'west-6', );
+$west-7-name: 'west-7';
+$west-7-x: 3600px;
+$west-7-y: 1800px;
+$west-7-offset-x: -3600px;
+$west-7-offset-y: -1800px;
+$west-7-width: 600px;
+$west-7-height: 600px;
+$west-7-total-width: 4200px;
+$west-7-total-height: 3600px;
+$west-7-image: '../spritesmith-generated/sprites.png';
+$west-7: (3600px, 1800px, -3600px, -1800px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'west-7', );
+$west-8-name: 'west-8';
+$west-8-x: 3600px;
+$west-8-y: 2400px;
+$west-8-offset-x: -3600px;
+$west-8-offset-y: -2400px;
+$west-8-width: 600px;
+$west-8-height: 600px;
+$west-8-total-width: 4200px;
+$west-8-total-height: 3600px;
+$west-8-image: '../spritesmith-generated/sprites.png';
+$west-8: (3600px, 2400px, -3600px, -2400px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'west-8', );
+$west-9-name: 'west-9';
+$west-9-x: 3600px;
+$west-9-y: 3000px;
+$west-9-offset-x: -3600px;
+$west-9-offset-y: -3000px;
+$west-9-width: 600px;
+$west-9-height: 600px;
+$west-9-total-width: 4200px;
+$west-9-total-height: 3600px;
+$west-9-image: '../spritesmith-generated/sprites.png';
+$west-9: (3600px, 3000px, -3600px, -3000px, 600px, 600px, 4200px, 3600px, '../spritesmith-generated/sprites.png', 'west-9', );
+$spritesheet-width: 4200px;
+$spritesheet-height: 3600px;
+$spritesheet-image: '../spritesmith-generated/sprites.png';
+$spritesheet-sprites: ($east-1, $east-10, $east-2, $east-3, $east-4, $east-5, $east-6, $east-7, $east-8, $east-9, $north-1, $north-2, $north-3, $north-4, $north-5, $north-6, $north-7, $north-8, $south-1, $south-10, $south-11, $south-2, $south-3, $south-4, $south-5, $south-6, $south-7, $south-8, $south-9, $west-1, $west-10, $west-11, $west-12, $west-13, $west-2, $west-3, $west-4, $west-5, $west-6, $west-7, $west-8, $west-9, );
+$spritesheet: (4200px, 3600px, '../spritesmith-generated/sprites.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

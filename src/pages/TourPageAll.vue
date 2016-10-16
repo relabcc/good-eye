@@ -7,16 +7,19 @@
         <p :style="{ color: colors.blue }">{{spot.description}}</p>
       </div>
       <div class="img">
-        <img :src="spot.img">
+        <sprite :tour="direction" :index="~~index + 1"></sprite>
       </div>
     </div>
     <div class="action">
       <btn label="關於這個計畫" route="/about"></btn>
     </div>
+    <re-footer></re-footer>
   </div>
 </template>
 
 <script>
+import ReFooter from '../components/ReFooter';
+import Sprite from '../components/Sprite';
 import Btn from '../components/Btn';
 import colors from '../config/colors';
 import tours from '../config/tours';
@@ -24,6 +27,8 @@ import tours from '../config/tours';
 export default {
   components: {
     Btn,
+    ReFooter,
+    Sprite,
   },
   data() {
     return {
