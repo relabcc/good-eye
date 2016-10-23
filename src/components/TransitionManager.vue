@@ -1,11 +1,15 @@
 <template>
-  <transition
-    @before-leave="beforeLeave"
-    @before-enter="beforeEnter"
-    @after-enter="afterEnter"
-  >
-    <slot></slot>
-  </transition>
+  <div class="animation-checker">
+    <transition
+      v-if="$store.state.animation"
+      @before-leave="beforeLeave"
+      @before-enter="beforeEnter"
+      @after-enter="afterEnter"
+    >
+      <slot></slot>
+    </transition>
+    <slot v-else></slot>
+  </div>
 </template>
 
 <script>

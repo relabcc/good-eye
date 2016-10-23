@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import isMobile from 'ismobilejs';
+import './utils/modernizr';
 
 Vue.use(Vuex);
 
@@ -13,6 +14,7 @@ const store = new Vuex.Store({
     isMobile,
     result: false,
     tourHinted: false,
+    animation: window.Modernizr.webanimations,
   },
   mutations: {
     answer(state, payload) {

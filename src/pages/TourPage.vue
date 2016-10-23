@@ -33,7 +33,7 @@
               <p :style="{ color: colors.blue }">{{spot.description}}</p>
             </div>
             <div class="img">
-              <sprite :tour="direction" :index="~~index + 1"></sprite>
+              <sprite :tour="direction" :index="~~index"></sprite>
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@
     <div class="status">
       <status-bar
         :total="spotLength"
-        :current="parseInt($route.params.id, 10)"
+        :current="~~$route.params.id"
         :goTo="goTo"
       ></status-bar>
     </div>
@@ -163,10 +163,11 @@ export default {
 }
 
 .img {
-  margin: -48px 0 -32px;
+  margin: -60px 0 0;
 }
 
 .status {
+  margin-top: 20vw;
   position: relative;
   z-index: 20;
   padding-top: 100%;

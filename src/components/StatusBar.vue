@@ -1,12 +1,16 @@
 <template>
   <div class="status-wrapper">
     <div class="status-item" v-for="n in total">
-      <transition name="man-move">
+      <transition v-if="$store.state.animation" name="man-move">
         <div v-show="n === current" class="status-man">
-          <!-- <img :src="man"> -->
           <walker></walker>
         </div>
       </transition>
+      <div v-else>
+        <div v-show="n === current" class="status-man">
+          <walker></walker>
+        </div>
+      </div>
       <div
         class="circle"
         :style="circleStyle(n)"

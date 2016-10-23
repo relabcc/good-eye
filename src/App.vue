@@ -1,8 +1,11 @@
 <template>
   <div id="app">
-    <transition name="drawer">
+    <transition v-if="$store.state.animation" name="drawer">
       <drawer v-on:closeMenu="closeMenu" v-show="drawerOpen"></drawer>
     </transition>
+    <div v-else>
+      <drawer v-on:closeMenu="closeMenu" v-show="drawerOpen"></drawer>
+    </div>
     <app-bar v-on:openMenu="openMenu"></app-bar>
     <div class="container">
       <div class="transition-wrapper">
@@ -82,13 +85,13 @@ body {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: bold;
   font-family: $font-family;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
   font-family: $font-family;
 }
@@ -126,11 +129,11 @@ img {
   background: white;
 }
 
-.transition-wrapper {
+.transition-wrapper > .animation-checker {
   position: relative;
 }
 
-.transition-wrapper > div {
+.transition-wrapper > .animation-checker > div {
   width: 100%;
   position: absolute;
   top: 48px;

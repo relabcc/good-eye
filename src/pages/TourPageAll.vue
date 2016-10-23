@@ -7,7 +7,7 @@
         <p :style="{ color: colors.blue }">{{spot.description}}</p>
       </div>
       <div class="img">
-        <sprite :tour="direction" :index="~~index + 1"></sprite>
+        <sprite :tour="direction" :index="~~index"></sprite>
       </div>
     </div>
     <div class="action">

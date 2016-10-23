@@ -12,6 +12,17 @@ import App from './App';
 import router from './router';
 import store from './store';
 
+// remove polyfill
+if (!('remove' in Element.prototype)) {
+  Object.assign(Element.prototype, {
+    remove() {
+      if (this.parentNode) {
+        this.parentNode.removeChild(this);
+      }
+    },
+  });
+}
+
 Pace.start({
   ajax: false,
 });

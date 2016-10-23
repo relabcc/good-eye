@@ -14,7 +14,7 @@
               @click="choice.onClick"
             >
               <div class="choice-image">
-                <sprite :tour="choice.tour" :index="id + 1"></sprite>
+                <sprite :tour="choice.tour" :index="choice.item"></sprite>
               </div>
               <div class="choice-text">
                 <p :style="{ color: colors.grey }">{{choice.text}}</p>
@@ -117,7 +117,7 @@ export default {
 }
 
 .status {
-  margin-top: 60px;
+  margin-top: 80px;
   padding-top: 100%;
 }
 </style>

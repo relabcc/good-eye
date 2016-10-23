@@ -95,7 +95,7 @@ module.exports = {
         ]
       },
       apiOptions: {
-        cssImageRef: '../spritesmith-generated/sprites.png'
+        cssImageRef: '~sprites.png'
       }
     })
   ],
