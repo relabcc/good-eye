@@ -26,7 +26,7 @@ const tours = {
   west: {
     direction: '城西',
     location: '大稻埕、西門町與艋舺周邊',
-    description: '流轉城西百年風華',
+    description: '活力十足、引領風騷百年的老城區',
     spots: west,
     questions: [
       { item: 1, text: '廟口小吃' },
@@ -42,7 +42,7 @@ const tours = {
   south: {
     direction: '城南',
     location: '公館、台電大樓周邊',
-    description: '跟著公館文青的腳步走一天',
+    description: '窩在公館度過有書和音樂陪伴的一天吧',
     spots: south,
     questions: [
       { item: 1, text: '健康水果沙拉' },

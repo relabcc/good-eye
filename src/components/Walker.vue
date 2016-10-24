@@ -19,12 +19,12 @@ export default {
   width: 100%;
   padding-top: 112.847222%;
   background-size: cover;
-  animation: play 1.2s steps(8) infinite;
+  animation: play 1.1s steps(6) infinite;
 }
 
 @keyframes play {
  from { background-position: 0; }
-   to { background-position: 114.6%; }
+   to { background-position: 120%; }
 }
 
 </style>

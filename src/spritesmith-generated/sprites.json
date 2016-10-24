@@ -340,7 +340,7 @@
     "meta": {
         "app": "spritesheet-templates",
         "version": "10.1.4",
-        "image": "../spritesmith-generated/sprites.png",
+        "image": "~sprites.png",
         "scale": 1,
         "size": {
             "w": 4200,

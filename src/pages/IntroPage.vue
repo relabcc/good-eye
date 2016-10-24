@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h2 :style="{ color: colors.blue }">今天去哪裡好呢？</h2>
+    <h2 :style="{ color: colors.blue }">今天你想去哪裡？</h2>
     <div class="intro-msg">
-      <p :style="{ color: colors.grey }">動動手指選出喜歡的圖片，就能得到最適合你今日的推薦行程，準備好了嗎？</p>
+      <p :style="{ color: colors.grey }">讓世界認識台北的中英文風格旅遊書，現正募資中！<br>先來測測適合你的推薦行程吧～</p>
     </div>
     <div class="intro-img">
       <walker></walker>
@@ -48,7 +48,7 @@ export default {
 <style scoped>
 .intro-msg {
   padding: 0 16px;
-  text-align: justify;
+  text-align: center;
 }
 
 .intro-img {

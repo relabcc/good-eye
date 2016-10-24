@@ -17,6 +17,10 @@ export default {
       type: [String, Boolean],
       default: false,
     },
+    href: {
+      type: [String, Boolean],
+      default: false,
+    },
   },
   data() {
     return {
@@ -31,11 +35,16 @@ export default {
       const {
         action,
         route,
+        href,
         $router,
       } = this;
       if (route) {
         $router.push(route);
-      } else if (action) action();
+      } else if (action) {
+        action();
+      } else if (href) {
+        window.open(href, '_blank');
+      }
     },
   },
 };

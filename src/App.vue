@@ -74,7 +74,7 @@ export default {
 </script>
 
 <style lang="scss">
-$font-family: "Noto Sans CJK TC", "source-han-sans-traditional", sans-serif;
+$font-family: "Lantinghei TC", "Microsoft YaHei", sans-serif;
 html {
   height: 100%;
 }
