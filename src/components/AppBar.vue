@@ -15,10 +15,10 @@
         </span>
       </div>
       <div class="bar-right">
-        <a href="http://google.com" target="_blank" class="bar-action donate">
+        <a href="http://www.books.com.tw/products/0010743506" target="_blank" class="bar-action buy">
           <div :style="{ color: colors.blue }">
             <div>我要</div>
-            <div>贊助</div>
+            <div>買書</div>
           </div>
         </a>
       </div>
@@ -81,7 +81,7 @@ export default {
   margin-right: 12px;
 }
 
-.donate {
+.buy {
   font-size: 12px;
   font-family: "Lantinghei TC", "Microsoft YaHei", sans-serif;
   text-decoration: none;

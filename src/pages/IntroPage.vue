@@ -2,7 +2,7 @@
   <div>
     <h2 :style="{ color: colors.blue }">今天你想去哪裡？</h2>
     <div class="intro-msg">
-      <p :style="{ color: colors.grey }">讓世界認識台北的中英文風格旅遊書，現正募資中！<br>先來測測適合你的推薦行程吧～</p>
+      <p :style="{ color: colors.grey }">第一本讓世界認識台北的中英文風格旅遊書！<br>來測測適合你的推薦行程吧～</p>
     </div>
     <div class="intro-img">
       <walker></walker>

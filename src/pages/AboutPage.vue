@@ -1,16 +1,17 @@
 <template>
   <div>
-    <h2 :style="{ color: colors.blue }">支持《Good Eye 台北挑剔指南》</h2>
+    <h2 :style="{ color: colors.blue }">《Good Eye 台北挑剔指南》</h2>
     <div class="description">
       <p :style="{ color: colors.grey }">
-       為了讓本書順利在國內外上市，請上嘖嘖贊助此次計畫，跟著指南一起探索台北吧！</p>
+       跟著指南一起探索台北吧！</p>
     </div>
     <div class="intro-img">
       <img :src="man" />
     </div>
     <div class="action">
-      <btn label="前往贊助" route="/"></btn>
+      <btn label="前往購買" href="http://www.books.com.tw/products/0010743506"></btn>
       <btn label="分享出去" :action="share"></btn>
+      <btn label="臉書按讚" href="https://www.facebook.com/goodeyetaipei/"></btn>
     </div>
     <re-footer></re-footer>
   </div>
@@ -57,7 +58,7 @@ export default {
 }
 
 .description {
-  text-align: justify;
+  text-align: center;
   margin: 0 16px;
 }
 </style>
