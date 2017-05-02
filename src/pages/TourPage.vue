@@ -47,7 +47,7 @@
       ></status-bar>
     </div>
     <modal v-if="!$store.state.tourHinted && !$store.state.inTransition">
-      <h3 slot="body" :style="{ color: colors.blue }">向右滑動，開始探索</h3>
+      <h3 slot="body" :style="{ color: colors.blue }">{{messages.hint}}</h3>
       <btn slot="footer" :action="hintRead">OK!</btn>
     </modal>
   </div>
@@ -65,6 +65,7 @@ import TransitionManager from '../components/TransitionManager';
 
 import colors from '../config/colors';
 import tours from '../config/tours';
+import { tour as messages } from '../config/messages';
 
 export default {
   mounted() {
@@ -86,6 +87,7 @@ export default {
   data() {
     return {
       colors,
+      messages,
     };
   },
   computed: {

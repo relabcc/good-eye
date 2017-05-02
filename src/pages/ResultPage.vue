@@ -1,6 +1,6 @@
 <template>
   <div v-if="result">
-    <h1 :style="{ color: colors.blue }">就決定去 {{tours[result].direction}} 了</h1>
+    <h1 :style="{ color: colors.blue }">{{title}}</h1>
     <h2 :style="{ color: colors.blue }">{{tours[result].location}}</h2>
     <div class="description">
       <p :style="{ color: colors.grey }">{{tours[result].description}}</p>
@@ -9,8 +9,8 @@
       <sprite :tour="result" index="1"></sprite>
     </div>
     <div class="actions">
-      <btn label="立即探索" :route="tourRoute"></btn>
-      <btn label="關於這個計畫" route="/about"></btn>
+      <btn :label="messages.explore" :route="tourRoute"></btn>
+      <btn :label="messages.about" route="/about"></btn>
     </div>
     <re-footer></re-footer>
   </div>
@@ -23,6 +23,7 @@ import ReFooter from '../components/ReFooter';
 import Sprite from '../components/Sprite';
 import Btn from '../components/Btn';
 import colors from '../config/colors';
+import { result as messages } from '../config/messages';
 import tours from '../config/tours';
 
 export default {
@@ -58,6 +59,7 @@ export default {
       colors,
       tours,
       result: false,
+      messages,
     };
   },
   computed: {
@@ -67,6 +69,10 @@ export default {
     tourRoute() {
       const { isMobile } = this.$store.state;
       return `/tour/${this.result}${isMobile.any ? '/1' : ''}`;
+    },
+    title() {
+      const { title } = messages;
+      return title.replace('%l', tours[this.result].direction);
     },
   },
 };

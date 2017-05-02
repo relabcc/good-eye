@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="action">
-      <btn label="關於這個計畫" route="/about"></btn>
+      <btn :label="messages.about" route="/about"></btn>
     </div>
     <re-footer></re-footer>
   </div>
@@ -23,6 +23,7 @@ import Sprite from '../components/Sprite';
 import Btn from '../components/Btn';
 import colors from '../config/colors';
 import tours from '../config/tours';
+import { result as messages } from '../config/messages';
 
 export default {
   components: {
@@ -33,6 +34,7 @@ export default {
   data() {
     return {
       colors,
+      messages,
     };
   },
   computed: {

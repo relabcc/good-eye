@@ -1,14 +1,14 @@
 <template>
   <div>
-    <h2 :style="{ color: colors.blue }">今天你想去哪裡？</h2>
+    <h2 :style="{ color: colors.blue }">{{messages.title}}</h2>
     <div class="intro-msg">
-      <p :style="{ color: colors.grey }">第一本讓世界認識台北的中英文風格旅遊書！<br>來測測適合你的推薦行程吧～</p>
+      <p :style="{ color: colors.grey }">{{messages.content}}</p>
     </div>
     <div class="intro-img">
       <walker></walker>
     </div>
     <div class="action">
-      <btn label="出發吧！" route="/question/1"></btn>
+      <btn :label="messages.action" route="/question/1"></btn>
     </div>
     <re-footer></re-footer>
   </div>
@@ -20,6 +20,7 @@ import colors from '../config/colors';
 import Btn from '../components/Btn';
 import Walker from '../components/Walker';
 import man from '../assets/man.png';
+import { intro as messages } from '../config/messages';
 export default {
   components: {
     Btn,
@@ -34,6 +35,7 @@ export default {
         borderColor: colors.blue,
       },
       man,
+      messages,
     };
   },
   methods: {
@@ -49,6 +51,7 @@ export default {
 .intro-msg {
   padding: 0 16px;
   text-align: center;
+  white-space: pre;
 }
 
 .intro-img {

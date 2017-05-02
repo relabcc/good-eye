@@ -11,15 +11,12 @@
       </div>
       <div class="bar-title">
         <span :style="{ color: colors.blue }" @click="titleClick" class="bar-action">
-          《Good Eye 台北挑剔指南》
+          {{messages.title}}
         </span>
       </div>
       <div class="bar-right">
         <a href="http://www.books.com.tw/products/0010743506" target="_blank" class="bar-action buy">
-          <div :style="{ color: colors.blue }">
-            <div>我要</div>
-            <div>買書</div>
-          </div>
+          <div :style="{ color: colors.blue }">{{messages.purchase}}</div>
         </a>
       </div>
     </div>
@@ -28,11 +25,13 @@
 
 <script>
 import colors from '../config/colors';
+import { appBar as messages } from '../config/messages';
 import share from '../utils/share';
 export default {
   data() {
     return {
       colors,
+      messages,
     };
   },
   methods: {
@@ -85,5 +84,6 @@ export default {
   font-size: 12px;
   font-family: "Lantinghei TC", "Microsoft YaHei", sans-serif;
   text-decoration: none;
+  white-space: pre;
 }
 </style>
