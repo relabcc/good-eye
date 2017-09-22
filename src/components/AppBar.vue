@@ -25,13 +25,12 @@
 
 <script>
 import colors from '../config/colors';
-import { appBar as messages } from '../config/messages';
+import messages from '../config/messages';
 import share from '../utils/share';
 export default {
   data() {
     return {
       colors,
-      messages,
     };
   },
   methods: {
@@ -42,6 +41,11 @@ export default {
       this.$router.push('/');
     },
     share,
+  },
+  computed: {
+    messages() {
+      return messages[this.$store.state.locale].appBar;
+    },
   },
 };
 </script>

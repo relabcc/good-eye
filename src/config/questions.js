@@ -1,31 +1,21 @@
 import { shuffle } from 'lodash';
-// import spots from '../assets/spots';
-import tours from './tours';
+import zhTours from './zh/tours';
+import zhTitles from './zh/titles';
 
-const titles = [
-  '今天早餐想吃什麼？',
-  '上午想去哪兒走走？',
-  '中餐想吃？',
-  '下午去哪邊逛逛？',
-  '還想去哪裡？',
-  '晚餐前上哪兒溜搭？',
-  '晚餐吃什麼？',
-  '吃飽去哪裡續攤？',
-];
-
-const mapChoices = (tour, index) => {
+const mapChoices = (tour, index, tours) => {
   const choice = tours[tour].questions[index];
   return {
     ...choice,
     tour,
-    // img: spots[tour][choice.item - 1],
   };
 };
 
-const mapQuestions = (title, index) => ({
+const mapQuestions = (title, index, tours) => ({
   title,
   choices: shuffle(Object.keys(tours))
-    .map(tour => mapChoices(tour, index)),
+    .map(tour => mapChoices(tour, index, tours)),
 });
 
-export default titles.map(mapQuestions);
+export default {
+  zh: zhTitles.map((title, index) => mapQuestions(title, index, zhTours)),
+};

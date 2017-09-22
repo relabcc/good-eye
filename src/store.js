@@ -15,6 +15,7 @@ const store = new Vuex.Store({
     result: false,
     tourHinted: false,
     animation: window.Modernizr.webanimations,
+    locale: 'zh',
   },
   mutations: {
     answer(state, payload) {
@@ -34,6 +35,9 @@ const store = new Vuex.Store({
     },
     tourHint(state) {
       state.tourHinted = true;
+    },
+    setLocale(state, { locale }) {
+      state.locale = locale;
     },
   },
 });

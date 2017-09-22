@@ -23,7 +23,7 @@ import ReFooter from '../components/ReFooter';
 import Sprite from '../components/Sprite';
 import Btn from '../components/Btn';
 import colors from '../config/colors';
-import { result as messages } from '../config/messages';
+import messages from '../config/messages';
 import tours from '../config/tours';
 
 export default {
@@ -57,22 +57,25 @@ export default {
   data() {
     return {
       colors,
-      tours,
-      result: false,
-      messages,
     };
   },
   computed: {
+    tours() {
+      return tours[this.$store.state.locale];
+    },
     result() {
       return this.$store.state.result;
+    },
+    messages() {
+      return messages[this.$store.state.locale].result;
     },
     tourRoute() {
       const { isMobile } = this.$store.state;
       return `/tour/${this.result}${isMobile.any ? '/1' : ''}`;
     },
     title() {
-      const { title } = messages;
-      return title.replace('%l', tours[this.result].direction);
+      const { title } = messages[this.$store.state.locale].result;
+      return title.replace('%l', this.tours[this.result].direction);
     },
   },
 };

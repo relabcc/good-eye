@@ -1,10 +1,7 @@
-// import { mapValues } from 'lodash';
-
 import east from './east.json';
 import west from './west.json';
 import south from './south.json';
 import north from './north.json';
-// import spots from '../../assets/spots';
 
 const tours = {
   east: {

@@ -20,7 +20,8 @@ import colors from '../config/colors';
 import Btn from '../components/Btn';
 import Walker from '../components/Walker';
 import man from '../assets/man.png';
-import { intro as messages } from '../config/messages';
+import messages from '../config/messages';
+
 export default {
   components: {
     Btn,
@@ -35,12 +36,16 @@ export default {
         borderColor: colors.blue,
       },
       man,
-      messages,
     };
   },
   methods: {
     openMenu() {
       this.$emit('openMenu');
+    },
+  },
+  computed: {
+    messages() {
+      return messages[this.$store.state.locale].intro;
     },
   },
 };

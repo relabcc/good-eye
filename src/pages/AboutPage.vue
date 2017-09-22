@@ -22,7 +22,7 @@ import ReFooter from '../components/ReFooter';
 
 import Btn from '../components/Btn';
 import colors from '../config/colors';
-import { about as messages } from '../config/messages';
+import messages from '../config/messages';
 import share from '../utils/share';
 import man from '../assets/man.png';
 
@@ -39,11 +39,15 @@ export default {
         borderColor: colors.blue,
       },
       man,
-      messages,
     };
   },
   methods: {
     share,
+  },
+  computed: {
+    messages() {
+      return messages[this.$store.state.locale].about;
+    },
   },
 };
 </script>

@@ -23,7 +23,7 @@ import Sprite from '../components/Sprite';
 import Btn from '../components/Btn';
 import colors from '../config/colors';
 import tours from '../config/tours';
-import { result as messages } from '../config/messages';
+import messages from '../config/messages';
 
 export default {
   components: {
@@ -34,7 +34,6 @@ export default {
   data() {
     return {
       colors,
-      messages,
     };
   },
   computed: {
@@ -46,11 +45,17 @@ export default {
       const { direction } = this.$route.params;
       return direction;
     },
+    tours() {
+      return tours[this.$store.state.locale];
+    },
     location() {
-      return tours[this.direction].location;
+      return this.tours[this.direction].location;
     },
     spots() {
-      return tours[this.direction].spots;
+      return this.tours[this.direction].spots;
+    },
+    messages() {
+      return messages[this.$store.state.locale].result;
     },
   },
 };

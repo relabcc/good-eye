@@ -1,6 +1,6 @@
 <template>
   <div class="drawer">
-    <div :style="{ color: colors.grey }" class="menu-title sub-header">菜單</div>
+    <div :style="{ color: colors.grey }" class="menu-title sub-header">{{messages.title}}</div>
     <nav>
       <dl>
         <menu-list-item
@@ -16,6 +16,7 @@
 
 <script>
 import colors from '../config/colors';
+import messages from '../config/messages';
 import share from '../utils/share';
 
 import MenuListItem from './MenuListItem';
@@ -32,20 +33,20 @@ export default {
     menuItems() {
       const m1 = [
         {
-          title: '回到首頁',
+          title: this.messages.home,
           onClick: () => {
             this.$router.push('/');
           },
         },
         {
-          title: '關於這個計畫',
+          title: this.messages.about,
           onClick: () => {
             this.$router.push('/about');
           },
         },
       ];
       return m1.concat(this.$store.state.done && {
-        title: '我的行程',
+        title: this.messages.result,
         onClick: () => {
           const {
             $store,
@@ -54,9 +55,12 @@ export default {
           $router.push(`/tour/${$store.state.result}${$store.state.isMobile.any ? '/1' : ''}`);
         },
       }, {
-        title: '分享出去',
+        title: this.messages.share,
         onClick: share,
       });
+    },
+    messages() {
+      return messages[this.$store.state.locale].menu;
     },
   },
   methods: {

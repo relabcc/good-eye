@@ -52,29 +52,30 @@ export default {
   data() {
     return {
       colors,
-      questionLength: questions.length,
     };
   },
   computed: {
+    questionLength() {
+      return this.questions.length;
+    },
     questions() {
       const {
         $router,
-        $store,
-        questionLength,
+        $store: { commit, state: { locale } },
       } = this;
-      return questions.map((question, index) => ({
+      return questions[locale].map((question, index, { length }) => ({
         title: question.title,
         choices: question.choices.map(choice => ({
           ...choice,
           onClick: () => {
             const qIndex = index + 1;
-            $store.commit('answer', {
+            commit('answer', {
               index: qIndex,
               answer: choice.tour,
             });
-            $router.push(qIndex === questionLength ?
+            $router.push(qIndex === length ?
               '/result' : `/question/${qIndex + 1}`);
-            if (qIndex === questionLength) $store.commit('doneQuiz');
+            if (qIndex === length) commit('doneQuiz');
           },
         })),
       }));

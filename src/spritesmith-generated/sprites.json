@@ -339,7 +339,7 @@
     },
     "meta": {
         "app": "spritesheet-templates",
-        "version": "10.1.4",
+        "version": "10.2.1",
         "image": "~sprites.png",
         "scale": 1,
         "size": {

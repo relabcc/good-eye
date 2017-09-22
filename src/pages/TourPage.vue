@@ -65,7 +65,7 @@ import TransitionManager from '../components/TransitionManager';
 
 import colors from '../config/colors';
 import tours from '../config/tours';
-import { tour as messages } from '../config/messages';
+import messages from '../config/messages';
 
 export default {
   mounted() {
@@ -87,18 +87,23 @@ export default {
   data() {
     return {
       colors,
-      messages,
     };
   },
   computed: {
+    tours() {
+      return tours[this.$store.state.locale];
+    },
     direction() {
       return this.$route.params.direction;
     },
     spotLength() {
-      return Object.keys(tours[this.direction].spots).length;
+      return Object.keys(this.tours[this.direction].spots).length;
     },
     spots() {
-      return tours[this.direction].spots;
+      return this.tours[this.direction].spots;
+    },
+    messages() {
+      return messages[this.$store.state.locale].tour;
     },
   },
   methods: {
