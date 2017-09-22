@@ -10,6 +10,24 @@
     <div class="action">
       <btn :label="messages.action" route="/question/1"></btn>
     </div>
+    <div class="languages">
+      <button
+        class="language"
+        @click="$store.commit('setLocale', 'zh')"
+        :style="{
+          color: $store.state.locale === 'zh' ? colors.blue : colors.grey,
+          fontWeight: $store.state.locale === 'zh' ? 'bold' : 'normal',
+        }"
+      >中文</button>
+      <button
+        class="language"
+        @click="$store.commit('setLocale', 'en')"
+        :style="{
+          color: $store.state.locale === 'en' ? colors.blue : colors.grey,
+          fontWeight: $store.state.locale === 'en' ? 'bold' : 'normal',
+        }"
+      >EN</button>
+    </div>
     <re-footer></re-footer>
   </div>
 </template>
@@ -56,7 +74,7 @@ export default {
 .intro-msg {
   padding: 0 16px;
   text-align: center;
-  white-space: pre;
+  white-space: pre-line;
 }
 
 .intro-img {
@@ -66,5 +84,13 @@ export default {
 
 .intro-img img {
   width: 100%;
+}
+
+.languages {
+  margin: 32px auto 16px;
+}
+
+.language {
+  cursor: pointer;
 }
 </style>

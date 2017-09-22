@@ -5,6 +5,8 @@ import './utils/modernizr';
 
 Vue.use(Vuex);
 
+const userLanguage = navigator.language || navigator.userLanguage;
+
 /* eslint-disable no-param-reassign */
 const store = new Vuex.Store({
   state: {
@@ -15,7 +17,7 @@ const store = new Vuex.Store({
     result: false,
     tourHinted: false,
     animation: window.Modernizr.webanimations,
-    locale: 'zh',
+    locale: userLanguage.startsWith('zh') ? 'zh' : 'en',
   },
   mutations: {
     answer(state, payload) {
@@ -36,7 +38,7 @@ const store = new Vuex.Store({
     tourHint(state) {
       state.tourHinted = true;
     },
-    setLocale(state, { locale }) {
+    setLocale(state, locale) {
       state.locale = locale;
     },
   },

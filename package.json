@@ -19,7 +19,6 @@
     "pace-progress": "^1.0.2",
     "sanitize.css": "^4.1.0",
     "vue": "^2.0.1",
-    "vue-i18n": "^5.0.3",
     "vue-router": "^2.0.0",
     "vuex": "^2.0.0"
   },

@@ -61,7 +61,6 @@ export default {
   width: 100%;
   height: 48px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 2px rgba(0,0,0,.2);
 }
@@ -77,15 +76,20 @@ export default {
 .bar-title {
   font-size: 16px;
   font-weight: bold;
+  flex: 1;
 }
 
 .bar-right {
   margin-left: 12px;
   margin-right: 12px;
+  font-size: 12px;
+}
+
+.language-toggle {
+  margin-right: 8px;
 }
 
 .buy {
-  font-size: 12px;
   font-family: "Lantinghei TC", "Microsoft YaHei", sans-serif;
   text-decoration: none;
   white-space: pre;
