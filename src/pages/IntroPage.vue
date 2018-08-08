@@ -92,5 +92,6 @@ export default {
 
 .language {
   cursor: pointer;
+  font-family: inherit;
 }
 </style>

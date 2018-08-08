@@ -9,7 +9,7 @@
       <img :src="man" />
     </div>
     <div class="action">
-      <btn :label="messages.purchase" href="http://www.books.com.tw/products/0010743506"></btn>
+      <btn :label="messages.purchase" href="http://www.books.com.tw/products/0010791864"></btn>
       <btn :label="messages.share" :action="share"></btn>
       <btn :label="messages.facebook" href="https://www.facebook.com/goodeyetaipei/"></btn>
     </div>

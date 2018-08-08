@@ -15,7 +15,7 @@
         </span>
       </div>
       <div class="bar-right">
-        <a href="http://www.books.com.tw/products/0010743506" target="_blank" class="bar-action buy">
+        <a href="http://www.books.com.tw/products/0010791864" target="_blank" class="bar-action buy">
           <div :style="{ color: colors.blue }">{{messages.purchase}}</div>
         </a>
       </div>
